@@ -29,7 +29,6 @@ html,body{height:100%;}
   --gold:rgba(241,200,77,.92);
   --goldA:rgba(241,200,77,.10);
 }
-body{ background:red; }
 body{
   margin:0;
   background:linear-gradient(180deg,var(--bg0),var(--bg1));
@@ -626,7 +625,11 @@ svg #parallaxLayer{will-change:transform;}
   color:rgba(232,238,246,.72);
 }
 
-.siteFooter{ margin-top: 7rem !important; outline: 2px solid red; }
+.siteFooter{
+  margin-top:7rem;
+  padding:12px 10px 0;
+  border-top:1px solid rgba(255,255,255,.10);
+}
 
 .siteFooter .line{
   margin-top:8px;
