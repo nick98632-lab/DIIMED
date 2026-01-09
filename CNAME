@@ -1,1 +1,2855 @@
-diimed.com
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PEERAMID2 Cognitive Assessment - MarineMD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- googleapis -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f6f9;
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+    .marine-logo {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+    .marine-logo img {
+      max-height: 100px;
+    }
+    .marine-footer {
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .print-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    .section-output {
+      white-space: pre-wrap;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+    .collapsible-section {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header with Motto -->
+<header>
+  <h1>PEERAMID2 Cognitive Assessment Battery</h1>
+</header>
+
+<!-- Print Button -->
+<div class="print-button">
+  <button class="btn btn-outline-light" onclick="window.print()">Print / Save as PDF</button>
+</div>
+
+<!-- MarineMD Branding -->
+<div class="text-center my-4">
+  <h1 style="margin: 0; font-size: 1rem; font-family: 'Dancing Script', cursive;">
+  Bridging innovation and inclusion for a better tomorrow. 
+  <p>Developed by Nickolas Pasetto</p>
+</div>
+
+<!-- Content Section -->
+<div class="container mt-4">
+
+<div class="card mb-4">
+  <div class="card-header bg-dark text-white">PEERAMID2 Color Key</div>
+  <div class="card-body">
+    <ul>
+      <li><strong><span style="color:blue;">Blue</span></strong> — Motor and Coordination Tasks (e.g., Finger Movements, Left–Right Discrimination)</li>
+      <li><strong><span style="color:gray;">Gray</span></strong> — Language and Verbal Tasks (e.g., Ambiguous Sentences, Phonological Switching)</li>
+      <li><strong><span style="color:black;">Black</span></strong> — Memory and Executive Function Tasks (e.g., Time Orientation, Rapid Verbal Recall)</li>
+      <li><strong><span style="color:teal;">Teal</span></strong> — Special Tasks (e.g., Lateral Preference, Catch Ball in Cup)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-header bg-dark text-white">Educational Summary</div>
+  <div class="card-body">
+  <p><strong>Introduction to PEERAMID 2:</strong> This summary provides an overview of the PEERAMID 2, a <em>clinical instrument</em> designed to assess neurodevelopmental functions in children aged 9 to 14.</p>
+  <p><strong>Purpose of this cognitive battery:</strong> It assists professionals in identifying strengths and weaknesses in various developmental areas, aiding in diagnosis and intervention planning.</p>
+  <p><strong>Target Audience:</strong> The PEERAMID 2 is intended for use by trained professionals, including pediatricians, psychologists, and educational specialists.</p>
+  <hr>
+  <h3>Evolution and Development</h3>
+  <ul>
+    <li><strong>Origins of the Assessment:</strong> Developed from earlier instruments like PEER and PEEX.</li>
+    <li><strong>Refinement Process:</strong> Planned through a Robert Wood Johnson Foundation grant.</li>
+    <li><strong>Key Revisions:</strong> Added phonological awareness, more memory emphasis, improved visual processing tasks.</li>
+  </ul>
+  <hr>
+  <h3>General Information and Administration</h3>
+  <ul>
+    <li><strong>Administration Time:</strong> Approximately one hour.</li>
+    <li><strong>Normative Data:</strong> Provided for ages 9-14, with consideration of local norms.</li>
+    <li><strong>Required Materials:</strong> Response Book, Stimulus Book, squash ball, cup, pencil, stopwatch.</li>
+    <li><strong>Components:</strong> Fine motor/graphomotor, language, gross motor, memory, visual processing sections.</li>
+  </ul>
+</div>
+
+<div class="card mb-4">
+  <div class="card-header bg-dark text-white">Main Sections</div>
+  <div class="card-body">
+<ul>
+  <li><strong>Fine Motor/Graphomotor Functions</strong>: Assesses motor skills related to writing.</li>
+  <li><strong>Language Functions</strong>: Evaluates various language parameters, including phonological awareness and comprehension.</li>
+  <li><strong>Gross Motor Functions</strong>: Provides information about motor skills and neuromaturational signs.</li>
+  <li><strong>Memory Functions</strong>: Assesses different types of memory (short-term, sequential).</li>
+  <li><strong>Visual Processing Functions</strong>: Examines ability to process and interpret visual information.</li>
+</ul>
+ </div>
+</div>
+
+
+<!-- Left–Right Discrimination -->
+<div class="card mb-4 border-primary">
+  <div class="card-header bg-primary text-white">Left–Right Discrimination</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_lr')">Show Instructions</button>
+    <div id="inst_lr" class="collapsible-section mb-3">
+      <p><strong>Instruction:</strong> The examiner should provide clear, slow instructions:<br>
+      “I am going to give you some instructions. I want you to listen carefully and follow them as best as you can. Please do not repeat the instructions aloud.”</p>
+
+      <p><strong>Instruction Sequence:</strong><br>
+      The examiner gives five instructions, one at a time. The last three instructions should be read slowly and, importantly, the examiner should turn to face the child during the final three instructions to ensure clarity and avoid confusion.</p>
+
+      <p><strong>Example commands include:</strong><br>
+      “Raise your left hand.”<br>
+      “Touch your right ear.”<br>
+      “Put your left hand on your right knee.”<br>
+      “Point to your right foot.”<br>
+      “Stand with your right foot forward.”</p>
+    </div>
+
+    <label for="lr_score">Correct Responses (0–5):</label>
+    <input id="lr_score" type="number" class="form-control mb-2" min="0" max="5" placeholder="Score (0–5)">
+
+    <label for="lr_notes">Notes:</label>
+    <textarea id="lr_notes" class="form-control mb-2" rows="2" placeholder="E.g., Midline confusion, sequencing errors..."></textarea>
+
+    <button class="btn btn-primary" onclick="scoreLeftRightDiscrimination()">Generate Output</button>
+    <div id="lr_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreLeftRightDiscrimination() {
+  const score = document.getElementById('lr_score').value;
+  const notes = document.getElementById('lr_notes').value;
+  const output =
+    "Task: Left–Right Discrimination" + "<br>" +
+    "Score: " + score + "<br>" +
+    "Interpretation: " + notes;
+  document.getElementById('lr_output').innerHTML = output;
+}
+</script>
+<!-- Lateral Preference (Hand/Eye Dominance) -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Lateral Preference (Hand/Eye Dominance)</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_lat_pref')">Show Instructions</button>
+    <div id="inst_lat_pref" class="collapsible-section mb-3">
+      <p><strong>Instruction:</strong> Ask the child to mimic functional tasks such as:</p>
+      <ul>
+        <li>“Show me how you throw a ball.”</li>
+        <li>“Pretend you are hammering a nail into the desk.”</li>
+        <li>“Pretend you are brushing your teeth.”</li>
+      </ul>
+      <p>Next, roll a response book into a tube and hand it to the child at midline. Say:</p>
+      <ul>
+        <li>“Look at me through this telescope I just made.”</li>
+        <li>Then: “Look up at the ceiling.”</li>
+        <li>“Now, look at the door.”</li>
+      </ul>
+    </div>
+
+    <label for="lat_pref_score">Score:</label>
+    <select id="lat_pref_score" class="form-select mb-2">
+      <option value="0">0 = Mixed</option>
+      <option value="1">1 = Left hand/eye</option>
+      <option value="2">2 = Right hand/eye</option>
+    </select>
+
+    <label for="lat_pref_notes">Notes:</label>
+    <textarea id="lat_pref_notes" class="form-control mb-2" rows="2" placeholder="E.g., mixed dominance, favoring left eye..."></textarea>
+
+    <button class="btn btn-primary" onclick="scoreLateralPreference()">Generate Output</button>
+    <div id="lat_pref_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreLateralPreference() {
+  const score = document.getElementById('lat_pref_score').value;
+  const notes = document.getElementById('lat_pref_notes').value;
+  const output =
+    "Task: Lateral Preference (Hand/Eye Dominance)" + "<br>" +
+    "Score: " + score + "<br>" +
+    "Interpretation: " + notes;
+  document.getElementById('lat_pref_output').innerHTML = output;
+}
+</script>
+<!-- Motor Sequential Imitation -->
+<div class="card mb-4 border-primary">
+  <div class="card-header bg-primary text-white">Motor Sequential Imitation</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_motor_seq')">Show Instructions</button>
+    <div id="inst_motor_seq" class="collapsible-section mb-3">
+      <p><strong>Rationale:</strong> This task assesses motor procedural memory — the brain’s ability to encode, store, and retrieve specific fine motor patterns.</p>
+      <p><em>It is crucial for:</em></p>
+      <ul>
+        <li>Writing fluency</li>
+        <li>Typing</li>
+        <li>Instrument performance</li>
+        <li>Other sequential hand-based tasks</li>
+      </ul>
+      <p>It also overlaps with attention, directionality, and fine motor planning, making it a key crossover measure in both memory and graphomotor function domains.</p>
+      <p><strong>Instruction:</strong> “Now we’re going to see how well you can get your fingers to remember patterns. Put both hands up in front of you like me. I’m going to move my fingers in a certain order. I’ll do it three times, then I’d like you to do exactly the same thing — three times. Use your [dominant hand]. Don’t start until I’ve shown you all three demonstrations.”</p>
+      <ul>
+        <li>Demonstrate each sequence three times, using your opposite hand (mirror image).</li>
+        <li>Child imitates using their dominant hand immediately afterward.</li>
+        <li>Allow self-correction during imitation. If self-correction occurs, require three perfect sequences consecutively.</li>
+        <li>Do not re-demonstrate for credit scoring purposes.</li>
+        <li>You may repeat a sequence for exploration/teaching, but do not award credit.</li>
+      </ul>
+    </div>
+
+    <label for="motor_seq_score"><strong>Performance:</strong></label>
+    <select id="motor_seq_score" class="form-select mb-2">
+      <option value="1">1 = Correct 3 consecutive reproductions</option>
+      <option value="0">0 = Incorrect or needed re-demonstration</option>
+    </select>
+
+    <label for="motor_seq_notes"><strong>Behavioral Notes:</strong></label>
+    <textarea id="motor_seq_notes" class="form-control mb-2" rows="2" placeholder="E.g., false starts, direction confusion..."></textarea>
+
+    <button class="btn btn-primary" onclick="scoreMotorSequentialImitation()">Generate Output</button>
+    <div id="motor_seq_output" class="section-output mt-2"></div>
+
+    <div class="mt-4">
+      <strong>Interpretation:</strong>
+      <ul>
+        <li><strong>Difficulty with recall:</strong> May suggest procedural memory deficits.</li>
+        <li><strong>False starts or finger confusion:</strong> Could indicate fine motor or motor planning problems.</li>
+        <li><strong>Delay or frustration:</strong> May reflect working memory or attention difficulties.</li>
+        <li><strong>Directionality confusion:</strong> Often seen in younger children or those with visuospatial challenges.</li>
+      </ul>
+      <strong>Compare with:</strong>
+      <ul>
+        <li>Verbal Instructions (Part B) — for working memory comparison.</li>
+        <li>Graphomotor tasks — to determine memory vs. execution issues.</li>
+        <li>Writing samples — to examine functional manifestation of motor sequences.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+function scoreMotorSequentialImitation() {
+  const score = document.getElementById('motor_seq_score').value;
+  const notes = document.getElementById('motor_seq_notes').value;
+  const output =
+    "Task: Motor Sequential Imitation" + "<br>" +
+    "Score: " + score + "<br>" +
+    "Interpretation: " + notes;
+  document.getElementById('motor_seq_output').innerHTML = output;
+}
+</script>
+<!-- Imitative Finger Movement -->
+<div class="card mb-4 border-primary">
+  <div class="card-header bg-primary text-white">Imitative Finger Movement</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_ifm')">Show Instructions</button>
+    <div id="inst_ifm" class="collapsible-section mb-3" style="display: none;">
+      <p><strong>Instruction:</strong> “Put your hands up like this. I want you to do the same things with your hands that I do with mine, as if I were your mirror. You should look at my fingers, but don’t look at your own fingers.”</p>
+      <ul>
+        <li>Oppose thumb and index finger (1-2) near the ear, hold 1 second.</li>
+        <li>Oppose fingers 1-4, hold 1 second.</li>
+        <li>Oppose 1-5, then 1-3, each held for 1 second.</li>
+      </ul>
+    </div>
+
+    <label for="ifm_score">Score:</label>
+    <select id="ifm_score" class="form-select mb-2">
+      <option value="0">0 = Present (can imitate)</option>
+      <option value="1">1 = Absent (cannot imitate)</option>
+    </select>
+
+    <label for="ifm_notes">Notes:</label>
+    <textarea id="ifm_notes" class="form-control mb-2" rows="2" placeholder="Describe mirror accuracy, presence of synkinesia, etc."></textarea>
+
+    <button class="btn btn-primary" onclick="scoreImitativeFingerMovement()">Generate Output</button>
+    <div id="ifm_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreImitativeFingerMovement() {
+  const score = document.getElementById('ifm_score').value;
+  const notes = document.getElementById('ifm_notes').value;
+  const output =
+    "Task: Imitative Finger Movement" + "<br>" +
+    "Score: " + score + "<br>" +
+    "Interpretation: " + notes;
+  document.getElementById('ifm_output').innerHTML = output;
+}
+</script>
+<!-- Rapid Alternating Movement -->
+<div class="card mb-4 border-primary">
+  <div class="card-header bg-primary text-white">Rapid Alternating Movement</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_ram')">Show Instructions</button>
+    <div id="inst_ram" class="collapsible-section mb-3">
+      <p><strong>Instruction:</strong> “Hold your arm above your head, squeeze the ball as hard as you can, and pretend you are turning a light bulb back and forth. Do this as fast as you can.”</p>
+
+      <p><strong>Rationale:</strong> This task assesses rapid alternating movements (RAM), which are part of cerebellar function and can provide insight into:</p>
+      <ul>
+        <li>Motor coordination</li>
+        <li>Motor sequencing ability</li>
+        <li>Inhibitory control</li>
+        <li>Upper limb dexterity</li>
+      </ul>
+
+      <p>RAM difficulties may appear in various developmental, neurological, or motor planning disorders. The test mimics real-world activities like turning doorknobs or twisting jar lids.</p>
+
+      <p><strong>Tips:</strong></p>
+      <ul>
+        <li>Model the motion for the child before requesting their imitation.</li>
+        <li>Note hand dominance and speed consistency.</li>
+      </ul>
+    </div>
+
+    <label for="ram_score"><strong>Performance:</strong></label>
+    <select id="ram_score" class="form-select mb-2">
+      <option value="1">1 = Smooth, rapid, symmetrical motion</option>
+      <option value="0">0 = Irregular, slow, or asymmetrical motion</option>
+    </select>
+
+    <label for="ram_notes"><strong>Behavioral Notes:</strong></label>
+    <textarea id="ram_notes" class="form-control mb-2" rows="2" placeholder="E.g., tremors, rhythm issues, switching delay..."></textarea>
+
+    <button class="btn btn-primary" onclick="scoreRapidAlternatingMovement()">Generate Output</button>
+    <div id="ram_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreRapidAlternatingMovement() {
+  const score = document.getElementById('ram_score').value;
+  const notes = document.getElementById('ram_notes').value;
+  const output =
+    "Task: Rapid Alternating Movement" + "<br>" +
+    "Score: " + score + "<br>" +
+    "Interpretation: " + notes;
+  document.getElementById('ram_output').innerHTML = output;
+}
+</script>
+<!-- Sequential Finger Opposition -->
+<div class="card mb-4 border-primary">
+  <div class="card-header bg-primary text-white">Sequential Finger Opposition</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_sfo')">Show Instructions</button>
+    <div id="inst_sfo" class="collapsible-section mb-3">
+      <p><strong>Instruction:</strong> "Now I am going to move my fingers in a special way. I want you to watch very closely and when I am finished, I would like you to move your fingers in the same order, the same way I did. You can look at your fingers as you do this. I want you to use the tips of your fingers and make a perfect O, the way I am doing."</p>
+
+      <p>The examiner will oppose their second, third, fourth, and then fifth fingers against their thumb in sequential order three times. The examiner will then ask the patient to repeat 6 cycles under time conditions.</p>
+    </div>
+
+    <label for="sfo_demo"><strong>Needed more than one demonstration?</strong></label>
+    <select id="sfo_demo" class="form-select mb-2">
+      <option value="0">0 = Yes</option>
+      <option value="1">1 = No</option>
+    </select>
+
+    <label for="sfo_synkinesia"><strong>Synkinesia or associated movement?</strong></label>
+    <select id="sfo_synkinesia" class="form-select mb-2">
+      <option value="0">0 = Present</option>
+      <option value="1">1 = Absent</option>
+    </select>
+
+    <label for="sfo_distal"><strong>Distal function (fingertips form a perfect 'O'):</strong></label>
+    <select id="sfo_distal" class="form-select mb-2">
+      <option value="0">0 = Poor (fewer than 5 cycles)</option>
+      <option value="1">1 = Good (5–6 cycles)</option>
+    </select>
+
+    <label for="sfo_speed"><strong>Speed (in seconds):</strong></label>
+    <input id="sfo_speed" type="number" class="form-control mb-2" placeholder="e.g. 12.5">
+
+    <label for="sfo_seq_errors"><strong>Sequence errors:</strong></label>
+    <select id="sfo_seq_errors" class="form-select mb-2">
+      <option value="0">0 = Incorrect on >1 cycle</option>
+      <option value="1">1 = Correct on 5–6 cycles</option>
+    </select>
+
+    <label for="sfo_notes"><strong>Behavioral Notes:</strong></label>
+    <textarea id="sfo_notes" class="form-control mb-2" rows="2" placeholder="Describe any delays, awkwardness, corrections..."></textarea>
+
+    <button class="btn btn-primary" onclick="scoreSequentialFingerOpposition()">Generate Output</button>
+    <div id="sfo_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreSequentialFingerOpposition() {
+  const demo = document.getElementById('sfo_demo').value;
+  const synkinesia = document.getElementById('sfo_synkinesia').value;
+  const distal = document.getElementById('sfo_distal').value;
+  const speed = document.getElementById('sfo_speed').value;
+  const seqErrors = document.getElementById('sfo_seq_errors').value;
+  const notes = document.getElementById('sfo_notes').value;
+
+  const output =
+    "Task: Sequential Finger Opposition" + "<br>" +
+    "Needed More Than One Demonstration: " + (demo == "0" ? "Yes" : "No") + "<br>" +
+    "Synkinesia or Associated Movement: " + (synkinesia == "0" ? "Present" : "Absent") + "<br>" +
+    "Distal Function (Perfect O's): " + (distal == "0" ? "Poor (<5 cycles)" : "Good (5–6 cycles)") + "<br>" +
+    "Speed: " + speed + " seconds" + "<br>" +
+    "Sequence Errors: " + (seqErrors == "0" ? "Incorrect on >1 cycle" : "Correct on 5–6 cycles") + "<br>" +
+    "Interpretation: " + notes;
+
+  document.getElementById('sfo_output').innerHTML = output;
+}
+</script>
+<!-- Alternating Fists -->
+<div class="card mb-4 border-primary">
+  <div class="card-header bg-primary text-white">Alternating Fists</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_af')">Show Instructions</button>
+    <div id="inst_af" class="collapsible-section mb-3">
+      <p><strong>Instruction:</strong> “Do exactly what I do. Don't start until I'm finished.”</p>
+
+      <p>The examiner extends both arms directly in front of the body, parallel to the ground. The examiner then alternates hand movements by opening one fist while closing the other, repeating this motion three times in sequence.</p>
+
+      <p><strong>Tips:</strong></p>
+      <ul>
+        <li>Watch for midline confusion, motor overflow, or loss of rhythm.</li>
+        <li>Encourage the child to stay in rhythm and maintain proper hand positioning throughout.</li>
+      </ul>
+    </div>
+
+    <label for="af_score"><strong>Performance:</strong></label>
+    <select id="af_score" class="form-select mb-2">
+      <option value="1">1 = Smooth, rhythmic, and mirrored correctly</option>
+      <option value="0">0 = Irregular, loss of rhythm, or mirrored incorrectly</option>
+    </select>
+
+    <label for="af_notes"><strong>Behavioral Notes:</strong></label>
+    <textarea id="af_notes" class="form-control mb-2" rows="2" placeholder="E.g., hand confusion, starting early, rhythm break..."></textarea>
+
+    <button class="btn btn-primary" onclick="scoreAlternatingFists()">Generate Output</button>
+    <div id="af_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreAlternatingFists() {
+  const score = document.getElementById('af_score').value;
+  const notes = document.getElementById('af_notes').value;
+  
+  let scoreMeaning = "";
+  if (score === "1") {
+    scoreMeaning = "Smooth, rhythmic, and mirrored correctly";
+  } else if (score === "0") {
+    scoreMeaning = "Irregular, loss of rhythm, or mirrored incorrectly";
+  }
+
+  const output =
+    "Task: Alternating Fists" + "<br>" +
+    "Score: " + score + " = " + scoreMeaning + "<br>" +
+    "Interpretation: " + notes;
+
+  document.getElementById('af_output').innerHTML = output;
+}
+</script>
+<!-- Catch Ball in Cup -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Catch Ball in Cup</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_cup')">Show Instructions</button>
+    <div id="inst_cup" class="collapsible-section mb-3">
+      <p><strong>Instruction:</strong> “I want you to throw the ball above your head to catch it in the cup. Use either hand to throw the ball, whichever you want. You don't have to throw it very high, but make sure it goes above your head. You can practice 3 times. Good? Okay. Now toss it up 10 times and try to catch it. Let's see how many times you can get the ball in the cup.”</p>
+
+      <p>The examiner provides a small foam ball and a lightweight plastic cup. The child may use either hand for throwing. After three practice tosses, the child attempts 10 consecutive tosses and catches.</p>
+    </div>
+
+    <label for="cup_score"><strong>Successful Catches (out of 10 attempts):</strong></label>
+    <input id="cup_score" type="number" class="form-control mb-2" min="0" max="10" placeholder="0–10">
+
+    <label for="cup_notes"><strong>Behavioral Notes:</strong></label>
+    <textarea id="cup_notes" class="form-control mb-2" rows="2" placeholder="E.g., ball height, timing, use of both hands..."></textarea>
+
+    <button class="btn btn-info" onclick="scoreCatchBallInCup()">Generate Output</button>
+    <div id="cup_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreCatchBallInCup() {
+  const score = document.getElementById('cup_score').value;
+  const notes = document.getElementById('cup_notes').value;
+
+  let scoreMeaning = "";
+  if (score >= 8) {
+    scoreMeaning = "Excellent hand-eye coordination";
+  } else if (score >= 5) {
+    scoreMeaning = "Adequate coordination with occasional misses";
+  } else {
+    scoreMeaning = "Difficulty with timing and coordination";
+  }
+
+  const output =
+    "Task: Catch Ball in Cup" + "<br>" +
+    "Score: " + score + "/10 = " + scoreMeaning + "<br>" +
+    "Interpretation: " + notes;
+
+  document.getElementById('cup_output').innerHTML = output;
+}
+</script>
+<!-- Hopping in Place -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Hopping in Place</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_hip')">Show Instructions</button>
+    <div id="inst_hip" class="collapsible-section mb-3">
+      <p><strong>Instruction:</strong> “Now I want you to hop two times, staying in place. First, I want you to hop two times on that foot,” <em>(pointing to the child's right foot)</em>, “and then two times on that foot,” <em>(pointing to the child's left foot)</em>, “then two times on that foot, and then two times on that foot, and so on. I want you to hop two times on each foot, without stopping in between, and without going any place. Keep doing it until I say to stop. Are you ready? Go!”</p>
+
+      <p>The examiner demonstrates hopping twice on one foot, then twice on the other, alternating continuously while staying in the same spot. The child is encouraged to maintain the rhythm without pausing between foot changes.</p>
+    </div>
+
+    <label for="hip_score"><strong>Performance:</strong></label>
+    <select id="hip_score" class="form-select mb-2">
+      <option value="2">2 = Smooth, continuous, stays in place</option>
+      <option value="1">1 = Minor pauses or slight movement</option>
+      <option value="0">0 = Frequent stopping, balance loss, or moving away</option>
+    </select>
+
+    <label for="hip_notes"><strong>Behavioral Notes:</strong></label>
+    <textarea id="hip_notes" class="form-control mb-2" rows="2" placeholder="E.g., foot switching errors, balance issues, traveling forward..."></textarea>
+
+    <button class="btn btn-info" onclick="scoreHoppingInPlace()">Generate Output</button>
+    <div id="hip_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreHoppingInPlace() {
+  const score = document.getElementById('hip_score').value;
+  const notes = document.getElementById('hip_notes').value;
+
+  let scoreMeaning = "";
+  if (score === "2") {
+    scoreMeaning = "Smooth, continuous hopping while staying in place";
+  } else if (score === "1") {
+    scoreMeaning = "Minor pauses or slight forward movement";
+  } else if (score === "0") {
+    scoreMeaning = "Frequent stopping, balance loss, or significant movement away";
+  }
+
+  const output =
+    "Task: Hopping in Place" + "<br>" +
+    "Score: " + score + " = " + scoreMeaning + "<br>" +
+    "Interpretation: " + notes;
+
+  document.getElementById('hip_output').innerHTML = output;
+}
+</script>
+<!-- Sustained Motor Stance -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Sustained Motor Stance</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_sms')">Show Instructions</button>
+    <div id="inst_sms" class="collapsible-section mb-3">
+      <p><strong>Instruction:</strong> “I want you to stand up straight and put your hands out in front of you. Spread your fingers out and close your eyes. Open your mouth and stick out your tongue all the way. See if you can stand like a statue until I tell you to stop.”</p>
+
+      <p>The examiner observes the child's ability to maintain posture, finger extension, eye closure, and tongue protrusion without significant loss of balance or movement. Time is recorded from the moment the stance is assumed until loss of posture or 30 seconds maximum.</p>
+    </div>
+<p><strong>Clinical Interpretation:</strong></p>
+<ul>
+  <li>Normal performance suggests good integration of postural control, proprioception, and motor planning.</li>
+  <li>Difficulty sustaining posture may indicate issues with cerebellar function, vestibular processing, attention, or generalized motor coordination weaknesses.</li>
+  <li>Marked imbalance, tongue retraction, or hand lowering can suggest poor postural tone or immature motor planning mechanisms.</li>
+</ul>
+    <label for="sms_time"><strong>Time Maintained (seconds, max 30):</strong></label>
+    <input id="sms_time" type="number" class="form-control mb-2" min="0" max="30" placeholder="0–30">
+
+    <label for="sms_notes"><strong>Behavioral Notes:</strong></label>
+    <textarea id="sms_notes" class="form-control mb-2" rows="2" placeholder="E.g., sway, hand lowering, tongue retraction, balance loss..."></textarea>
+
+    <button class="btn btn-info" onclick="scoreSustainedMotorStance()">Generate Output</button>
+    <div id="sms_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreSustainedMotorStance() {
+  const time = document.getElementById('sms_time').value;
+  const notes = document.getElementById('sms_notes').value;
+
+  let scoreMeaning = "";
+  if (time >= 25) {
+    scoreMeaning = "Excellent posture and balance maintained";
+  } else if (time >= 15) {
+    scoreMeaning = "Minor sway or minor posture adjustments";
+  } else {
+    scoreMeaning = "Difficulty sustaining stance or early loss of posture";
+  }
+
+  const output =
+    "Task: Sustained Motor Stance" + "<br>" +
+    "Time: " + time + " seconds = " + scoreMeaning + "<br>" +
+    "Interpretation: " + notes;
+
+  document.getElementById('sms_output').innerHTML = output;
+}
+</script>
+<!-- Time Orientation -->
+<div class="card mb-4 border-dark">
+  <div class="card-header bg-dark text-white">Time Orientation</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_time_orient')">Show Instructions</button>
+    <div id="inst_time_orient" class="collapsible-section mb-3">
+      <p><strong>Instruction:</strong> “I’m going to ask you a few questions about today. Just answer as best as you can. First, what is today’s date? What day of the week is it? What month is it? What year is it? And what season is it right now?”</p>
+
+      <p>The examiner records whether each response is correct or incorrect. No prompting or cueing is provided after the initial question.</p>
+
+      <p><strong>Tips:</strong></p>
+      <ul>
+        <li>Allow the child enough time to respond without rushing them.</li>
+        <li>Record the number of correct responses (maximum 5).</li>
+      </ul>
+
+      <p><strong>Clinical Interpretation:</strong></p>
+      <ul>
+        <li>Strong time orientation suggests intact short-term memory, attention, and semantic knowledge retrieval.</li>
+        <li>Errors may indicate working memory impairment, slowed processing, or broader cognitive disorganization.</li>
+        <li>Disorientation to date, day, or season may reflect executive dysfunction or early signs of memory difficulties.</li>
+      </ul>
+    </div>
+
+    <label for="time_orient_score"><strong>Correct Responses (0–5):</strong></label>
+    <input id="time_orient_score" type="number" class="form-control mb-2" min="0" max="5" placeholder="0–5">
+
+    <label for="time_orient_notes"><strong>Behavioral Notes:</strong></label>
+    <textarea id="time_orient_notes" class="form-control mb-2" rows="2" placeholder="E.g., confusion between month and season, hesitation before answering..."></textarea>
+
+    <button class="btn btn-dark" onclick="scoreTimeOrientation()">Generate Output</button>
+    <div id="time_orient_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreTimeOrientation() {
+  const score = document.getElementById('time_orient_score').value;
+  const notes = document.getElementById('time_orient_notes').value;
+
+  let scoreMeaning = "";
+  if (score == "5") {
+    scoreMeaning = "Fully oriented to time";
+  } else if (score >= "3") {
+    scoreMeaning = "Minor disorientation (missed 1–2 elements)";
+  } else {
+    scoreMeaning = "Significant disorientation to time";
+  }
+
+  const output =
+    "Task: Time Orientation" + "<br>" +
+    "Score: " + score + " = " + scoreMeaning + "<br>" +
+    "Interpretation: " + notes;
+
+  document.getElementById('time_orient_output').innerHTML = output;
+}
+</script>
+<!-- Rapid Verbal Recall (RVR) -->
+<div class="card mb-4 border-dark">
+  <div class="card-header bg-dark text-white">Rapid Verbal Recall (RVR)</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_rvr')">Show Instructions</button>
+    <div id="inst_rvr" class="collapsible-section mb-3">
+      <p><strong>Rationale:</strong> This task evaluates a child's understanding of temporal sequences and the ability to access long-term memory (e.g., days, months), use active working memory to reorder known sequences, demonstrate automatized recall, and comprehend and manipulate temporally complex language. Difficulty here may reflect sequential memory weakness, inattention, or poor retrieval fluency, all of which impact real-world planning and academic tasks.</p>
+
+      <p><strong>Instructions:</strong> This task is administered after the gross motor assessment. Examiner says: “Now I'm going to ask you a few questions.” Only items 3 and 4 may be repeated once in their entirety. Responses with a latency greater than 5 seconds should be flagged as hesitation.</p>
+
+      <p><strong>Prompts:</strong></p>
+      <ul>
+        <li><strong>Question 1:</strong> “Tell me the days of the week backwards starting with Thursday.”<br>
+        <em>Expected response:</em> Thursday, Wednesday, Tuesday, Monday, Sunday, Saturday, Friday.</li>
+        <li><strong>Question 2:</strong> “What month comes directly before March?”<br>
+        <em>Expected response:</em> February.</li>
+        <li><strong>Question 3:</strong> “During a race, a runner finishes at 11:30. Another finished 15 minutes earlier. What time did the fastest runner finish?”<br>
+        <em>Expected response:</em> 11:15.</li>
+        <li><strong>Question 4:</strong> “John does his science homework before he does his English but after his math. What does John do second?”<br>
+        <em>Expected response:</em> Science.</li>
+        <li><strong>Question 5:</strong> “What month comes right before September?”<br>
+        <em>Expected response:</em> August.</li>
+      </ul>
+
+      <p><strong>Clinical Interpretation:</strong></p>
+      <ul>
+        <li><strong>Errors on Question 1 (days backwards):</strong> Suggests sequential memory weakness, poor automatized recall, or difficulty reversing ordered sequences.</li>
+        <li><strong>Errors on Question 2 (month before March) or Question 5 (month before September):</strong> Suggest difficulty accessing temporal sequences from long-term memory or weaker semantic time mapping.</li>
+        <li><strong>Errors on Question 3 (race time calculation):</strong> Suggest impaired working memory, slowed mental math manipulation, or difficulty integrating temporal concepts with numeric reasoning.</li>
+        <li><strong>Errors on Question 4 (homework sequence):</strong> Suggest difficulty with multi-step verbal reasoning, executive dysfunction (planning and ordering information).</li>
+        <li><strong>Frequent hesitations (>5 seconds):</strong> Reflect slowed retrieval speed, weak processing fluency, or attentional inefficiency.</li>
+      </ul>
+    </div>
+
+    <label for="rvr_score"><strong>Correct Responses (0–5):</strong></label>
+    <input id="rvr_score" type="number" class="form-control mb-2" min="0" max="5" placeholder="0–5">
+
+    <label for="rvr_notes"><strong>Behavioral Notes:</strong></label>
+    <textarea id="rvr_notes" class="form-control mb-2" rows="2" placeholder="E.g., hesitations, sequence errors, partial recall, logical errors..."></textarea>
+
+    <button class="btn btn-dark" onclick="scoreRVR()">Generate Output</button>
+    <div id="rvr_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreRVR() {
+  const score = document.getElementById('rvr_score').value;
+  const notes = document.getElementById('rvr_notes').value;
+
+  let scoreMeaning = "";
+  if (score == "5") {
+    scoreMeaning = "All responses correct, fluent and accurate recall";
+  } else if (score >= "3") {
+    scoreMeaning = "Minor recall, sequencing, or reasoning errors (missed 1–2 items)";
+  } else {
+    scoreMeaning = "Significant difficulty with sequencing, recall, or temporal reasoning";
+  }
+
+  const output =
+    "Task: Rapid Verbal Recall (RVR)" + "<br>" +
+    "Score: " + score + " = " + scoreMeaning + "<br>" +
+    "Interpretation: " + notes;
+
+  document.getElementById('rvr_output').innerHTML = output;
+}
+</script>
+
+<!-- Verbal Instructions (Parts A and B) -->
+<div class="card mb-4 border-dark">
+  <div class="card-header bg-dark text-white">Verbal Instructions (Parts A and B)</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_vi')">Show Instructions</button>
+    <div id="inst_vi" class="collapsible-section mb-3">
+      <p><strong>Rationale:</strong> Evaluates auditory processing, sequential memory, and the ability to execute complex verbal instructions sensitive to attention span, language comprehension, and cognitive load. Highlights working memory capacity and the impact of distraction or divided attention. Mimics real-world classroom environments where verbal information volume is high and working memory demands are elevated.</p>
+
+      <p><strong>Administration:</strong> 
+      Examiner gives a series of increasingly complex commands (one through five steps). Instructions should be delivered clearly, at natural conversation pace, and not repeated unless formally trialing accommodations post-task. Materials: Page two of response book (dots, squares, x’s, lines, circles of varying size and thickness).</p>
+
+      <p><strong>Script:</strong> “I'm going to ask you to do some things on this page. Notice that there are dots at the top. Then there are three squares, a large one, a middle-sized one, and a small one. There are a big X, a middle-sized X, and two small X's. Then a short line and a long line, a thick line and a thin line, and two big circles and two small circles. I'm going to give you some instructions to follow. I'm only allowed to say these instructions once, so please listen very carefully.”</p>
+
+      <p><strong>Accommodations (optional after full task):</strong> Slower reading pace, chunking instructions into parts, allowing child to repeat instructions aloud before acting.</p>
+
+      <p><strong>Scoring:</strong> Each item scored individually. 1 = correct execution, 0 = incorrect or minor errors. Specific mistakes should be noted for clinical interpretation.</p>
+
+      <p><strong>Clinical Interpretation Overview:</strong> Part A uses simple syntax with low working memory load. Part B introduces dual-step or non-sequential commands, requiring greater working memory, sequencing, and auditory rehearsal. Performance helps differentiate pure memory weaknesses from higher-order executive dysfunction.</p>
+    </div>
+
+    <h5>Part A: Condensed Syntax</h5>
+
+    <label for="vi_a1">Item 1: Put your thumb in a big circle and then use your pencil to touch the other one. (Cognitive Demand: Visual tracking and dual step)</label>
+    <select id="vi_a1" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="vi_a2">Item 2: Draw small and middle sized circles inside the two big circles. (Cognitive Demand: Embedded spatial prepositions)</label>
+    <select id="vi_a2" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="vi_a3">Item 3: Put a circle around the small X that's farthest away from the small square. (Cognitive Demand: Distance-based reasoning)</label>
+    <select id="vi_a3" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="vi_a4">Item 4: Make a dot inside the four dots and then make a circle that only goes around it. (Cognitive Demand: Object isolation plus containment)</label>
+    <select id="vi_a4" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="vi_a5">Item 5: Make a circle in the big square and then make a square in the middle one. (Cognitive Demand: Sequential shape-in-shape)</label>
+    <select id="vi_a5" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <h5>Part B: Active Working Memory</h5>
+
+    <label for="vi_b6">Item 6: Before you make four X's above the middle square, draw a line connecting the two circles. (Cognitive Demand: Temporal reversal and working memory)</label>
+    <select id="vi_b6" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="vi_b7">Item 7: Draw five squares at the top of the page if there are more than 14 dots. (Cognitive Demand: Conditional reasoning and visual scan)</label>
+    <select id="vi_b7" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="vi_b8">Item 8: Put three dots above the thick line after you've made a square and a circle underneath it. (Cognitive Demand: Temporal sequencing and shape placement)</label>
+    <select id="vi_b8" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="vi_b9">Item 9: Make small circles under the small X's and small X's under the big circles. (Cognitive Demand: Alternating sequencing by shape and size)</label>
+    <select id="vi_b9" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="vi_b10">Item 10: Draw four circles next to the shortest line, but first draw one X and two dots underneath it. (Cognitive Demand: Dual order execution with spatial logic)</label>
+    <select id="vi_b10" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="vi_notes">General Behavioral Notes:</label>
+    <textarea id="vi_notes" class="form-control mb-2" rows="2" placeholder="E.g., impulsivity, inattention, difficulty sequencing, confusion between objects..."></textarea>
+
+    <button class="btn btn-dark" onclick="scoreVerbalInstructions()">Generate Output</button>
+    <div id="vi_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreVerbalInstructions() {
+  const a1 = document.getElementById('vi_a1').value;
+  const a2 = document.getElementById('vi_a2').value;
+  const a3 = document.getElementById('vi_a3').value;
+  const a4 = document.getElementById('vi_a4').value;
+  const a5 = document.getElementById('vi_a5').value;
+  const b6 = document.getElementById('vi_b6').value;
+  const b7 = document.getElementById('vi_b7').value;
+  const b8 = document.getElementById('vi_b8').value;
+  const b9 = document.getElementById('vi_b9').value;
+  const b10 = document.getElementById('vi_b10').value;
+  const notes = document.getElementById('vi_notes').value;
+
+  const totalScore = parseInt(a1) + parseInt(a2) + parseInt(a3) + parseInt(a4) + parseInt(a5) +
+                     parseInt(b6) + parseInt(b7) + parseInt(b8) + parseInt(b9) + parseInt(b10);
+
+  const output =
+    "Task: Verbal Instructions (Parts A and B)" + "<br>" +
+    "Total Score: " + totalScore + "/10" + "<br><br>" +
+    "**Part A: Condensed Syntax**" + "<br>" +
+    "Item 1 Score: " + a1 + " (Visual tracking and dual step)" + "<br>" +
+    "Item 2 Score: " + a2 + " (Embedded spatial prepositions)" + "<br>" +
+    "Item 3 Score: " + a3 + " (Distance-based reasoning)" + "<br>" +
+    "Item 4 Score: " + a4 + " (Object isolation plus containment)" + "<br>" +
+    "Item 5 Score: " + a5 + " (Sequential shape-in-shape)" + "<br><br>" +
+    "**Part B: Active Working Memory**" + "<br>" +
+    "Item 6 Score: " + b6 + " (Temporal reversal and working memory)" + "<br>" +
+    "Item 7 Score: " + b7 + " (Conditional reasoning and visual scan)" + "<br>" +
+    "Item 8 Score: " + b8 + " (Temporal sequencing and shape placement)" + "<br>" +
+    "Item 9 Score: " + b9 + " (Alternating sequencing by shape and size)" + "<br>" +
+    "Item 10 Score: " + b10 + " (Dual order execution with spatial logic)" + "<br><br>" +
+    "Interpretation: " + notes;
+
+  document.getElementById('vi_output').innerHTML = output;
+}
+</script>
+<!-- Yes, No, Maybe Task -->
+<div class="card mb-4 border-dark">
+  <div class="card-header bg-dark text-white">Yes, No, Maybe Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_ynm')">Show Instructions</button>
+    <div id="inst_ynm" class="collapsible-section mb-3">
+      <p><strong>Rationale:</strong> Assesses logical inference, syntactic comprehension, emotional insight, and pragmatic language interpretation. Requires interpretation of complex clauses, negations, and embedded emotional meaning. Sensitive to weaknesses in semantic flexibility, executive inference, and social cognition.</p>
+
+      <p><strong>Instructions:</strong> Ask each question aloud. Child must respond “Yes,” “No,” or “Maybe.” No rephrasing unless formally trialing accommodations post hoc. Track score, hesitation, elaboration needed, and free interpretation.</p>
+
+      <p><strong>Scoring:</strong> 1 = Correct and confident interpretation. 0 = Incorrect, misunderstanding, or hesitant/inconsistent response.</p>
+    </div>
+
+    <h5>Questions</h5>
+
+    <!-- Template for each question -->
+
+    <!-- Example for Question 1 -->
+    <div class="mb-4">
+      <p><strong>1.</strong> John said, "Shouldn't you make the knot loose?"<br>
+      <em>Question:</em> Will the knot be made loose?<br>
+      <em>Correct Answer:</em> Yes<br>
+      <em>Linguistic Feature:</em> Negative indirect request suggesting positive action.<br>
+      <em>Clinical Interpretation:</em> Errors may indicate difficulty interpreting negated social directives, impacting pragmatic language skills.</p>
+
+      <select id="ynm1" class="form-select mb-2">
+        <option value="1">1 = Correct</option>
+        <option value="0">0 = Incorrect</option>
+      </select>
+      <label><input type="checkbox" id="ynm1_elab"> Elaboration Needed?</label>
+    </div>
+
+    <div class="mb-4">
+      <p><strong>2.</strong> Ricky won't go to the party unless Ann goes.<br>
+      <em>Question:</em> Will Ricky go to the party?<br>
+      <em>Correct Answer:</em> Maybe<br>
+      <em>Linguistic Feature:</em> Conditional conjunction "unless" requiring conditional inference.<br>
+      <em>Clinical Interpretation:</em> Errors may suggest difficulty with interpreting conditional negations and contingency-based reasoning.</p>
+
+      <select id="ynm2" class="form-select mb-2">
+        <option value="1">1 = Correct</option>
+        <option value="0">0 = Incorrect</option>
+      </select>
+      <label><input type="checkbox" id="ynm2_elab"> Elaboration Needed?</label>
+    </div>
+
+    <div class="mb-4">
+      <p><strong>3.</strong> Bob promised he would buy the candy.<br>
+      <em>Question:</em> Will Bob buy the candy?<br>
+      <em>Correct Answer:</em> Yes<br>
+      <em>Linguistic Feature:</em> Non-conforming verb "promised" requiring inference about intent.<br>
+      <em>Clinical Interpretation:</em> Errors may suggest impaired inferential reasoning or difficulty understanding promises and future intentions.</p>
+
+      <select id="ynm3" class="form-select mb-2">
+        <option value="1">1 = Correct</option>
+        <option value="0">0 = Incorrect</option>
+      </select>
+      <label><input type="checkbox" id="ynm3_elab"> Elaboration Needed?</label>
+    </div>
+
+    <div class="mb-4">
+      <p><strong>4.</strong> It’s usually safe to climb that mountain, although it’s very dangerous in the fog.<br>
+      <em>Question:</em> Is it safe to climb the mountain?<br>
+      <em>Correct Answer:</em> Maybe<br>
+      <em>Linguistic Feature:</em> Conditional contrast and context-dependent inference.<br>
+      <em>Clinical Interpretation:</em> Errors may reflect difficulty integrating contextual information when conditions modify safety or risk judgments.</p>
+
+      <select id="ynm4" class="form-select mb-2">
+        <option value="1">1 = Correct</option>
+        <option value="0">0 = Incorrect</option>
+      </select>
+      <label><input type="checkbox" id="ynm4_elab"> Elaboration Needed?</label>
+    </div>
+
+    <div class="mb-4">
+      <p><strong>5.</strong> Maybe the band would have played last night if the drummer hadn't quit.<br>
+      <em>Question:</em> Did the band play last night?<br>
+      <em>Correct Answer:</em> No<br>
+      <em>Linguistic Feature:</em> Conditional past tense; counterfactual "if" clause.<br>
+      <em>Clinical Interpretation:</em> Errors suggest difficulty with past unreal conditionals and counterfactual thinking.</p>
+
+      <select id="ynm5" class="form-select mb-2">
+        <option value="1">1 = Correct</option>
+        <option value="0">0 = Incorrect</option>
+      </select>
+      <label><input type="checkbox" id="ynm5_elab"> Elaboration Needed?</label>
+    </div>
+
+    <!-- Continue adding 6 through 15 below -->
+<!-- Continuing Questions 6-15 -->
+
+<div class="mb-4">
+  <p><strong>6.</strong> Mary knows whether John plays basketball.<br>
+  <em>Question:</em> Does Mary know if John plays basketball?<br>
+  <em>Correct Answer:</em> Yes<br>
+  <em>Linguistic Feature:</em> Factive phrase: "knows whether" indicates certainty.<br>
+  <em>Clinical Interpretation:</em> Errors suggest difficulty interpreting factive constructions implying awareness of unknowns.</p>
+
+  <select id="ynm6" class="form-select mb-2">
+    <option value="1">1 = Correct</option>
+    <option value="0">0 = Incorrect</option>
+  </select>
+  <label><input type="checkbox" id="ynm6_elab"> Elaboration Needed?</label>
+</div>
+
+<div class="mb-4">
+  <p><strong>7.</strong> Mary knows that Bill plays the piano.<br>
+  <em>Question:</em> Does Bill play the piano?<br>
+  <em>Correct Answer:</em> Yes<br>
+  <em>Linguistic Feature:</em> Factive phrase: "knows that" implies truth of embedded clause.<br>
+  <em>Clinical Interpretation:</em> Errors indicate difficulty with certainty-based language and fact recognition.</p>
+
+  <select id="ynm7" class="form-select mb-2">
+    <option value="1">1 = Correct</option>
+    <option value="0">0 = Incorrect</option>
+  </select>
+  <label><input type="checkbox" id="ynm7_elab"> Elaboration Needed?</label>
+</div>
+
+<div class="mb-4">
+  <p><strong>8.</strong> Jim thinks Tom is good at sports.<br>
+  <em>Question:</em> Is Tom good at sports?<br>
+  <em>Correct Answer:</em> Maybe<br>
+  <em>Linguistic Feature:</em> Factive contrast: distinction between belief and truth.<br>
+  <em>Clinical Interpretation:</em> Errors suggest difficulty distinguishing others' opinions from objective facts.</p>
+
+  <select id="ynm8" class="form-select mb-2">
+    <option value="1">1 = Correct</option>
+    <option value="0">0 = Incorrect</option>
+  </select>
+  <label><input type="checkbox" id="ynm8_elab"> Elaboration Needed?</label>
+</div>
+
+<div class="mb-4">
+  <p><strong>9.</strong> They could not believe that Joe was telling the truth.<br>
+  <em>Question:</em> Was Joe telling the truth?<br>
+  <em>Correct Answer:</em> Maybe<br>
+  <em>Linguistic Feature:</em> Factive verb "believe" in negative tense.<br>
+  <em>Clinical Interpretation:</em> Errors suggest difficulty interpreting disbelief or negated belief structures.</p>
+
+  <select id="ynm9" class="form-select mb-2">
+    <option value="1">1 = Correct</option>
+    <option value="0">0 = Incorrect</option>
+  </select>
+  <label><input type="checkbox" id="ynm9_elab"> Elaboration Needed?</label>
+</div>
+
+<div class="mb-4">
+  <p><strong>10.</strong> Linda's dog chased the kitten and ran away.<br>
+  <em>Question:</em> Did the kitten run away?<br>
+  <em>Correct Answer:</em> No<br>
+  <em>Linguistic Feature:</em> Minimal distance principle violation (subject ambiguity).<br>
+  <em>Clinical Interpretation:</em> Errors reflect difficulty parsing pronoun references and resolving subject ambiguity.</p>
+
+  <select id="ynm10" class="form-select mb-2">
+    <option value="1">1 = Correct</option>
+    <option value="0">0 = Incorrect</option>
+  </select>
+  <label><input type="checkbox" id="ynm10_elab"> Elaboration Needed?</label>
+</div>
+
+<div class="mb-4">
+  <p><strong>11.</strong> Chris will be happy unless his school wins a football game.<br>
+  <em>Question:</em> Will Chris be happy if his school wins?<br>
+  <em>Correct Answer:</em> No<br>
+  <em>Linguistic Feature:</em> Contradictory conditional logic.<br>
+  <em>Clinical Interpretation:</em> Errors may indicate difficulty processing inverted outcomes and understanding contingent emotional reactions.</p>
+
+  <select id="ynm11" class="form-select mb-2">
+    <option value="1">1 = Correct</option>
+    <option value="0">0 = Incorrect</option>
+  </select>
+  <label><input type="checkbox" id="ynm11_elab"> Elaboration Needed?</label>
+</div>
+
+<div class="mb-4">
+  <p><strong>12.</strong> Nancy’s teacher thinks she’s bored in class much of the time.<br>
+  <em>Question:</em> Is Nancy bored in class?<br>
+  <em>Correct Answer:</em> Maybe<br>
+  <em>Linguistic Feature:</em> Factive verb "thinks" — distinction between belief and reality.<br>
+  <em>Clinical Interpretation:</em> Errors indicate difficulty separating personal belief from factual reality in social cognition.</p>
+
+  <select id="ynm12" class="form-select mb-2">
+    <option value="1">1 = Correct</option>
+    <option value="0">0 = Incorrect</option>
+  </select>
+  <label><input type="checkbox" id="ynm12_elab"> Elaboration Needed?</label>
+</div>
+
+<div class="mb-4">
+  <p><strong>13.</strong> If it weren't for those experiments in class, Richard would enjoy science.<br>
+  <em>Question:</em> Does Richard enjoy science?<br>
+  <em>Correct Answer:</em> No<br>
+  <em>Linguistic Feature:</em> Conditional counterfactual negating present state.<br>
+  <em>Clinical Interpretation:</em> Errors suggest difficulty understanding counterfactual reasoning and cause-effect logic.</p>
+
+  <select id="ynm13" class="form-select mb-2">
+    <option value="1">1 = Correct</option>
+    <option value="0">0 = Incorrect</option>
+  </select>
+  <label><input type="checkbox" id="ynm13_elab"> Elaboration Needed?</label>
+</div>
+
+<div class="mb-4">
+  <p><strong>14.</strong> The teacher who was looking for Mike rode his bicycle home from school.<br>
+  <em>Question:</em> Did Mike ride the bicycle home from school?<br>
+  <em>Correct Answer:</em> No<br>
+  <em>Linguistic Feature:</em> Pronoun attachment ambiguity.<br>
+  <em>Clinical Interpretation:</em> Errors suggest difficulty resolving referent ambiguity and maintaining sentence focus.</p>
+
+  <select id="ynm14" class="form-select mb-2">
+    <option value="1">1 = Correct</option>
+    <option value="0">0 = Incorrect</option>
+  </select>
+  <label><input type="checkbox" id="ynm14_elab"> Elaboration Needed?</label>
+</div>
+<div class="mb-4">
+  <p><strong>15.</strong> Maybe the band would have played last night if the drummer hadn't quit.<br>
+  <em>Question:</em> Did the band play last night?<br>
+  <em>Correct Answer:</em> No<br>
+  <em>Linguistic Feature:</em> Past unreal conditional, counterfactual.<br>
+  <em>Clinical Interpretation:</em> Errors indicate difficulty reasoning about hypothetical scenarios in the past, affecting flexible cognition.</p>
+
+  <select id="ynm15" class="form-select mb-2">
+    <option value="1">1 = Correct</option>
+    <option value="0">0 = Incorrect</option>
+  </select>
+  <label><input type="checkbox" id="ynm15_elab"> Elaboration Needed?</label>
+</div>
+
+    <!-- I will continue with 6–15 immediately after this message to avoid cutoff -->
+
+    <label for="ynm_notes">General Observations and Interpretation:</label>
+    <textarea id="ynm_notes" class="form-control mb-2" rows="3" placeholder="E.g., consistent misinterpretation of negations, emotional inference difficulties, required clarification for conditionals..."></textarea>
+
+    <button class="btn btn-dark" onclick="scoreYesNoMaybe()">Generate Output</button>
+    <div id="ynm_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreYesNoMaybe() {
+  const scores = [
+    parseInt(document.getElementById('ynm1').value),
+    parseInt(document.getElementById('ynm2').value),
+    parseInt(document.getElementById('ynm3').value),
+    parseInt(document.getElementById('ynm4').value),
+    parseInt(document.getElementById('ynm5').value),
+    parseInt(document.getElementById('ynm6').value),
+    parseInt(document.getElementById('ynm7').value),
+    parseInt(document.getElementById('ynm8').value),
+    parseInt(document.getElementById('ynm9').value),
+    parseInt(document.getElementById('ynm10').value),
+    parseInt(document.getElementById('ynm11').value),
+    parseInt(document.getElementById('ynm12').value),
+    parseInt(document.getElementById('ynm13').value),
+    parseInt(document.getElementById('ynm14').value),
+    parseInt(document.getElementById('ynm15').value)
+  ];
+
+  const elaborations = [
+    document.getElementById('ynm1_elab').checked,
+    document.getElementById('ynm2_elab').checked,
+    document.getElementById('ynm3_elab').checked,
+    document.getElementById('ynm4_elab').checked,
+    document.getElementById('ynm5_elab').checked,
+    document.getElementById('ynm6_elab').checked,
+    document.getElementById('ynm7_elab').checked,
+    document.getElementById('ynm8_elab').checked,
+    document.getElementById('ynm9_elab').checked,
+    document.getElementById('ynm10_elab').checked,
+    document.getElementById('ynm11_elab').checked,
+    document.getElementById('ynm12_elab').checked,
+    document.getElementById('ynm13_elab').checked,
+    document.getElementById('ynm14_elab').checked,
+    document.getElementById('ynm15_elab').checked
+  ];
+
+  const notes = document.getElementById('ynm_notes').value;
+
+  const totalScore = scores.reduce((a, b) => a + b, 0);
+  const elaborationCount = elaborations.filter(elab => elab).length;
+
+  const output =
+    "Task: Yes, No, Maybe Task" + "<br>" +
+    "Total Correct: " + totalScore + "/15" + "<br>" +
+    "Elaboration Needed on: " + elaborationCount + " items" + "<br><br>" +
+    "Interpretation and Observations: " + notes;
+
+  document.getElementById('ynm_output').innerHTML = output;
+}
+</script>
+<!-- Tandem Balance (Tightrope Walk) -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Tandem Balance (Tightrope Walk)</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_tandem')">Show Instructions</button>
+    <div id="inst_tandem" class="collapsible-section mb-3">
+      <p><strong>Rationale:</strong> Assesses balance, proprioception, vestibular integrity, motor planning, and self-regulation under altered sensory input (eyes closed).</p>
+
+      <p><strong>Instructions:</strong> “I want you to put one foot directly in front of the other as if you are walking on a tightrope. Now, set your balance, okay? I want you to close your eyes, keep your hands down at your sides, and see if you can keep your balance. Are you ready?”</p>
+    </div>
+
+    <label for="tandem_score">Performance:</label>
+    <select id="tandem_score" class="form-select mb-2">
+      <option value="2">2 = Maintains full balance without stepping or major adjustments</option>
+      <option value="1">1 = Minor balance corrections or sway, but remains standing</option>
+      <option value="0">0 = Loss of balance requiring stepping off or needing to open eyes</option>
+    </select>
+
+    <label for="tandem_notes">Observations:</label>
+    <textarea id="tandem_notes" class="form-control mb-2" rows="3" placeholder="E.g., sway, compensatory arm movements, stepping off line, eye flutter, tremor..."></textarea>
+
+    <button class="btn btn-info" onclick="scoreTandemBalance()">Generate Output</button>
+    <div id="tandem_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreTandemBalance() {
+  const score = document.getElementById('tandem_score').value;
+  const notes = document.getElementById('tandem_notes').value;
+
+  let scoreMeaning = "";
+  let interpretation = "";
+
+  if (score === "2") {
+    scoreMeaning = "Maintains full balance without stepping or major adjustments";
+    interpretation = "Findings suggest intact proprioceptive, vestibular, and motor planning systems under sensory deprivation (eyes closed). No significant balance dysfunction observed.";
+  } else if (score === "1") {
+    scoreMeaning = "Minor balance corrections or sway, but remains standing";
+    interpretation = "Findings suggest mildly reduced postural stability or minor vestibular sensitivity under sensory deprivation. Balance generally intact but may require monitoring in challenging conditions.";
+  } else if (score === "0") {
+    scoreMeaning = "Loss of balance requiring stepping off or needing to open eyes";
+    interpretation = "Findings suggest significant postural instability, impaired vestibular response, or poor motor self-regulation under altered sensory input. Consideration for balance interventions or further assessment warranted.";
+  }
+
+  const output =
+    "Task: Tandem Balance (Tightrope Walk)" + "<br>" +
+    "Score: " + score + " = " + scoreMeaning + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation + "<br><br>" +
+    "<strong>Clinician Observations:</strong> " + notes;
+
+  document.getElementById('tandem_output').innerHTML = output;
+}
+</script>
+<!-- Pencil Speed Task -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Pencil Speed Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-info btn-sm mb-2" onclick="toggleSection('inst_pencil_speed')">Show Instructions</button>
+    <div id="inst_pencil_speed" class="collapsible-section mb-3" style="display: none;">
+      <p><strong>Rationale:</strong> Assesses fine motor speed, visual-motor integration, attention, and motor inhibition under timed conditions.</p>
+ 
+      <p><strong>Instructions:</strong><br> 
+        Open the response book to page one. Hand the child a sharpened pencil (dominant hand) and say:<br><br>
+        <em>“I want you to draw your pencil through the maze without touching the sides, and I want you to go as far as you can until I say stop. I will give you 15 seconds to see how far you can get. But try not to touch the sides. Put your pencil on the dot. Are you ready? Go.”</em><br><br>
+        After 15 seconds, say “Stop.” Mark where the pencil stopped.
+      </p>
+    </div>
+
+<div class="text-center my-4">
+  <div class="btn-group" role="group" aria-label="PDF Downloads">
+  <a href="https://10952ce7-c250-499e-92ce-0bb7ad8d338c.usrfiles.com/ugd/10952c_bd7ab53333974ba29a123956ee9f99a6.pdf" 
+     target="_blank" 
+     class="btn btn-primary btn-sm">
+     Download Response Book Page 1
+    </a>
+  </div>
+
+    <label for="pencil_units">Units Completed:</label>
+    <input id="pencil_units" type="number" class="form-control mb-2" min="0" placeholder="e.g., 10, 15, 20...">
+
+    <label for="pencil_errors">Errors (Touches/Deviations):</label>
+    <input id="pencil_errors" type="number" class="form-control mb-2" min="0" placeholder="e.g., 0, 2, 5...">
+
+    <label for="pencil_notes">Observations:</label>
+    <textarea id="pencil_notes" class="form-control mb-2" rows="3" placeholder="E.g., hesitation, messy corrections, fatigue, visual scanning problems..."></textarea>
+
+    <button class="btn btn-info" onclick="scorePencilSpeed()">Generate Output</button>
+    <div id="pencil_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scorePencilSpeed() {
+  const units = parseInt(document.getElementById('pencil_units').value) || 0;
+  const errors = parseInt(document.getElementById('pencil_errors').value) || 0;
+  const notes = document.getElementById('pencil_notes').value;
+
+  const correctedUnits = units - errors;
+
+  let interpretation = "";
+  if (correctedUnits >= 18) {
+    interpretation = "Excellent fine motor speed and accuracy.";
+  } else if (correctedUnits >= 14) {
+    interpretation = "Mildly reduced motor speed or visual-motor accuracy.";
+  } else {
+    interpretation = "Significant difficulty with fine motor precision, visual tracking, or motor inhibition under timed conditions.";
+  }
+
+  const output =
+    "Task: Pencil Speed Task" + "<br>" +
+    "Units Completed: " + units + "<br>" +
+    "Errors (Touches/Deviations): " + errors + "<br>" +
+    "Corrected Score (Units - Errors): " + correctedUnits + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation + "<br><br>" +
+    "<strong>Clinician Observations:</strong> " + notes;
+
+  document.getElementById('pencil_output').innerHTML = output;
+}
+</script>
+<!-- Cursive Alphabet Task -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Cursive Alphabet Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_cursive')">Show Instructions</button>
+    <div id="inst_cursive" class="collapsible-section mb-3">
+      <p><strong>Rationale:</strong> Assesses fine motor graphomotor sequencing, motor automaticity, memory retrieval, and sustained motor control.</p>
+
+      <p><strong>Instructions:</strong><br>
+      Point to the cursive alphabet section on page 1 of the response book. Say:<br><br>
+      <em>“I want you to write the letters of the alphabet in lowercase letters from A to Z in writing, not printing. The small letters, not the capitals. Join all the letters together as if the alphabet is one long word, and don't lift your pencil off the page. That means you don't need to cross the T or X or dot the I. I want to see how long it takes you. If you usually print, that's okay. Just do it how you normally do.”</em><br><br>
+      Do not instruct the child to go quickly. Allow cursive or printing based on the child's preference.
+      </p>
+    </div>
+
+<div class="text-center my-4">
+  <div class="btn-group" role="group" aria-label="PDF Downloads">
+  <a href="https://10952ce7-c250-499e-92ce-0bb7ad8d338c.usrfiles.com/ugd/10952c_bd7ab53333974ba29a123956ee9f99a6.pdf" 
+     target="_blank" 
+     class="btn btn-primary btn-sm">
+     Download Response Book Page 1
+    </a>
+  </div>
+
+    <label for="cursive_time">Time to Completion (seconds):</label>
+    <input id="cursive_time" type="number" class="form-control mb-2" min="0" placeholder="e.g., 45, 60, 90...">
+
+    <label for="cursive_errors">Number of Errors:</label>
+    <input id="cursive_errors" type="number" class="form-control mb-2" min="0" placeholder="e.g., 0, 2, 5...">
+
+    <label for="cursive_notes">Observations:</label>
+    <textarea id="cursive_notes" class="form-control mb-2" rows="3" placeholder="E.g., hesitation, breaks between letters, unusual grip, excessive pressure, motor fatigue, etc."></textarea>
+
+    <button class="btn btn-info" onclick="scoreCursiveAlphabet()">Generate Output</button>
+    <div id="cursive_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreCursiveAlphabet() {
+  const time = parseInt(document.getElementById('cursive_time').value) || 0;
+  const errors = parseInt(document.getElementById('cursive_errors').value) || 0;
+  const notes = document.getElementById('cursive_notes').value;
+
+  let interpretation = "";
+
+  if (errors === 0 && time <= 60) {
+    interpretation = "Excellent fine motor sequencing, graphomotor fluency, and motor planning.";
+  } else if (errors <= 3 && time <= 90) {
+    interpretation = "Mild graphomotor inefficiency or minor sequencing hesitations observed.";
+  } else {
+    interpretation = "Significant graphomotor weakness, difficulty sustaining motor sequences, or possible retrieval/memory interference affecting fluency.";
+  }
+
+  const output =
+    "Task: Cursive Alphabet Task" + "<br>" +
+    "Time to Completion: " + time + " seconds" + "<br>" +
+    "Number of Errors: " + errors + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation + "<br><br>" +
+    "<strong>Clinician Observations:</strong> " + notes;
+
+  document.getElementById('cursive_output').innerHTML = output;
+}
+</script>
+<!-- Phonological Switching – Pig Latin Task -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Phonological Switching – Pig Latin Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_piglatin')">Show Instructions</button>
+    <div id="inst_piglatin" class="collapsible-section mb-3" style="display: none;">
+      <p><strong>Rationale:</strong> Assesses phonological awareness, cognitive flexibility, sound manipulation, working memory, and auditory processing.</p>
+
+      <p><strong>Instructions:</strong><br>
+      Say:<br><br>
+      <em>“We’re going to play a game sometimes called Pig Latin with the sounds in words. I will say a word, and I want you to move the first sound to the end of the word and then add ‘ay’ at the end. That’s ‘a-y.’ Let's try some examples. Boot becomes oot-bay. Table becomes able-tay. Just like that!”</em><br><br>
+      If the child does not understand, the instructions may be repeated once and should be noted. Once the child begins successfully, no further instruction should be repeated except for restating the stimulus word if needed.
+      </p>
+
+      <p><strong>Practice Examples:</strong><br>
+      Boot → oot-bay<br>
+      Table → able-tay
+      </p>
+    </div>
+
+    <h5>Test Words (Mark 1 = Correct, 0 = Incorrect)</h5>
+
+    <label for="pig1">1. Beet → Expected: eat-bay</label>
+    <select id="pig1" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="pig2">2. Rust → Expected: ust-ray</label>
+    <select id="pig2" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="pig3">3. Cheese → Expected: eese-chay</label>
+    <select id="pig3" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="pig4">4. Moon → Expected: oon-may</label>
+    <select id="pig4" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="pig5">5. Street → Expected: treet-say</label>
+    <select id="pig5" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="pig6">6. Magic → Expected: agic-may</label>
+    <select id="pig6" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="pig7">7. Broke → Expected: oke-bray</label>
+    <select id="pig7" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="pig8">8. Chair → Expected: air-chay</label>
+    <select id="pig8" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label for="piglatin_notes">Observations:</label>
+    <textarea id="piglatin_notes" class="form-control mb-2" rows="3" placeholder="E.g., self-corrections, hesitation, forgetting the rule, phonological difficulties, needed repetition, etc."></textarea>
+
+    <button class="btn btn-info" onclick="scorePigLatin()">Generate Output</button>
+    <div id="piglatin_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scorePigLatin() {
+  const scores = [
+    parseInt(document.getElementById('pig1').value),
+    parseInt(document.getElementById('pig2').value),
+    parseInt(document.getElementById('pig3').value),
+    parseInt(document.getElementById('pig4').value),
+    parseInt(document.getElementById('pig5').value),
+    parseInt(document.getElementById('pig6').value),
+    parseInt(document.getElementById('pig7').value),
+    parseInt(document.getElementById('pig8').value)
+  ];
+
+  const notes = document.getElementById('piglatin_notes').value;
+
+  const totalScore = scores.reduce((a, b) => a + b, 0);
+
+  let interpretation = "";
+
+  if (totalScore === 8) {
+    interpretation = "Excellent phonological manipulation and working memory for sound patterns.";
+  } else if (totalScore >= 6) {
+    interpretation = "Mild difficulty with phonological switching; generally adequate cognitive flexibility.";
+  } else {
+    interpretation = "Significant difficulty manipulating phonological structures; potential working memory, language processing, or auditory sequencing concerns.";
+  }
+
+  const output =
+    "Task: Phonological Switching – Pig Latin" + "<br>" +
+    "Total Correct: " + totalScore + "/8" + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation + "<br><br>" +
+    "<strong>Clinician Observations:</strong> " + notes;
+
+  document.getElementById('piglatin_output').innerHTML = output;
+}
+</script>
+<!-- Category Naming Task -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Category Naming Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_category_naming')">Show Instructions</button>
+    <div id="inst_category_naming" class="collapsible-section mb-3" style="display: none;">
+      <p><strong>Rationale:</strong> Assesses semantic verbal fluency, lexical access, strategy use in retrieval, and semantic memory organization.</p>
+
+      <p><strong>Instructions – Part 1 (Animals):</strong><br>
+      Say:<br>
+      <em>"Now I'm going to ask you to name as many different animals as you can think of in 30 seconds. Are you ready? Go."</em><br><br>
+      Start the timer and record all responses. Stop exactly at 30 seconds. Transition to next part immediately.
+      </p>
+
+      <p><strong>Instructions – Part 2 (Countries):</strong><br>
+      Say:<br>
+      <em>"Now I want you to name as many countries as you can in 30 seconds. Are you ready? Go."</em><br><br>
+      If the child begins naming continents, states, provinces, or cities, interrupt briefly:  
+      <em>"I mean countries, like the United States. Let's start again."</em><br>
+      If mixing continues, allow to proceed but only count valid countries. No errors are recorded — just qualitative review.
+      </p>
+    </div>
+
+    <h5>Part 1: Animals</h5>
+    <label for="animals_correct">Total Correct Responses (Animals):</label>
+    <input id="animals_correct" type="number" class="form-control mb-2" min="0" placeholder="e.g., 15, 20, 25...">
+
+    <label for="animals_repeats">Repetitions:</label>
+    <select id="animals_repeats" class="form-select mb-2">
+      <option value="1">1 = No Repeats</option>
+      <option value="0">0 = Repeats Present</option>
+    </select>
+
+    <label for="animals_strategy">Strategy Used:</label>
+    <select id="animals_strategy" class="form-select mb-2">
+      <option value="1">1 = Strategy Present (subcategory like pets, zoo animals)</option>
+      <option value="0">0 = No Strategy Observed</option>
+    </select>
+
+    <label for="animals_notes">Observations (Animals):</label>
+    <textarea id="animals_notes" class="form-control mb-2" rows="3" placeholder="E.g., hesitation, narrow grouping, unusual responses, divergent thinking..."></textarea>
+
+    <hr>
+
+    <h5>Part 2: Countries</h5>
+    <label for="countries_correct">Total Correct Responses (Countries):</label>
+    <input id="countries_correct" type="number" class="form-control mb-2" min="0" placeholder="e.g., 8, 12, 16...">
+
+    <label for="countries_repeats">Repetitions:</label>
+    <select id="countries_repeats" class="form-select mb-2">
+      <option value="1">1 = No Repeats</option>
+      <option value="0">0 = Repeats Present</option>
+    </select>
+
+    <label for="countries_strategy">Strategy Used:</label>
+    <select id="countries_strategy" class="form-select mb-2">
+      <option value="1">1 = Strategy Present (subcategory like continents, regions)</option>
+      <option value="0">0 = No Strategy Observed</option>
+    </select>
+
+    <label for="countries_notes">Observations (Countries):</label>
+    <textarea id="countries_notes" class="form-control mb-2" rows="3" placeholder="E.g., confusion with cities, continents, rapid or slow production, divergent responses..."></textarea>
+
+    <button class="btn btn-info" onclick="scoreCategoryNaming()">Generate Output</button>
+    <div id="category_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+function scoreCategoryNaming() {
+  const animalsCorrect = parseInt(document.getElementById('animals_correct').value) || 0;
+  const animalsRepeats = parseInt(document.getElementById('animals_repeats').value);
+  const animalsStrategy = parseInt(document.getElementById('animals_strategy').value);
+  const animalsNotes = document.getElementById('animals_notes').value;
+
+  const countriesCorrect = parseInt(document.getElementById('countries_correct').value) || 0;
+  const countriesRepeats = parseInt(document.getElementById('countries_repeats').value);
+  const countriesStrategy = parseInt(document.getElementById('countries_strategy').value);
+  const countriesNotes = document.getElementById('countries_notes').value;
+
+  let interpretation = "";
+
+  if (animalsCorrect >= 18 && countriesCorrect >= 12) {
+    interpretation = "Excellent semantic fluency, strong lexical access, and efficient verbal retrieval strategies.";
+  } else if (animalsCorrect >= 14 && countriesCorrect >= 9) {
+    interpretation = "Mild weakness in verbal retrieval; generally adequate semantic memory organization.";
+  } else {
+    interpretation = "Significant retrieval inefficiency or semantic disorganization noted; potential lexical access or executive function concerns.";
+  }
+
+  const output =
+    "Task: Category Naming Task" + "<br><br>" +
+    "<strong>Part 1: Animals</strong><br>" +
+    "Correct Responses: " + animalsCorrect + "<br>" +
+    "Repetitions: " + (animalsRepeats ? "No repeats" : "Repeats present") + "<br>" +
+    "Strategy Use: " + (animalsStrategy ? "Strategy observed" : "No strategy observed") + "<br>" +
+    "Observations: " + animalsNotes + "<br><br>" +
+    "<strong>Part 2: Countries</strong><br>" +
+    "Correct Responses: " + countriesCorrect + "<br>" +
+    "Repetitions: " + (countriesRepeats ? "No repeats" : "Repeats present") + "<br>" +
+    "Strategy Use: " + (countriesStrategy ? "Strategy observed" : "No strategy observed") + "<br>" +
+    "Observations: " + countriesNotes + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation;
+
+  document.getElementById('category_output').innerHTML = output;
+}
+</script>
+<!-- Picture Parts Naming Task -->
+<div class="card mb-4 border-secondary">
+  <div class="card-header bg-secondary text-white">Picture Parts Naming Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_pictureparts')">Show Instructions</button>
+    <div id="inst_pictureparts" class="collapsible-section mb-3">
+      <p><strong>Rationale:</strong> Evaluates lexical retrieval from visual stimuli, visual-verbal association, semantic memory access, and speeded verbal retrieval.</p>
+
+      <p><strong>Instructions:</strong><br>
+      Say:<br>
+      <em>"I want you to name some things in some pictures. Name each thing the arrow is pointing to. Start with number 1."</em><br><br>
+      - Open the stimulus book to Page 1 (Items 1–8).<br>
+      - Proceed through Items 1–8.<br>
+      - Then turn to Page 2 and continue through Items 9–16.<br>
+      - Start timing at first question, stop after item 16.<br>
+      - Minimal prompts only (Special prompts allowed for Item 10 and Item 11).<br>
+      - After time, optional phonemic or semantic cueing may be provided for diagnostic insight (but not counted toward time score).
+      </p>
+    </div>
+
+
+<div class="text-center my-4">
+  <div class="btn-group" role="group" aria-label="PDF Downloads">
+  <a href="https://10952ce7-c250-499e-92ce-0bb7ad8d338c.usrfiles.com/ugd/10952c_784286370bb144e1926e5759c223fabb.pdf" 
+     target="_blank" 
+     class="btn btn-primary btn-sm">
+     Download Stimulus Book Page 1
+    </a>
+     <a href="https://10952ce7-c250-499e-92ce-0bb7ad8d338c.usrfiles.com/ugd/10952c_97cd579ebf8743c09d299b385febb0ab.pdf" 
+     target="_blank" 
+     class="btn btn-primary btn-sm">
+     Download Stimulus Book Page 2
+    </a>
+  </div>
+</div>
+
+    
+    <br><hr>
+
+    <h5>Scoring Section</h5>
+
+    <div id="picture_parts_list">
+      <!-- Items 1–16 -->
+    </div>
+
+    <label for="picture_time" class="mt-3">Total Time (seconds):</label>
+    <input id="picture_time" type="number" class="form-control mb-2" min="0" placeholder="e.g., 85, 120, etc.">
+
+    <button class="btn btn-secondary" onclick="scorePictureParts()">Generate Output</button>
+    <div id="picture_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+// Items and Expected Responses
+const picturePartsItems = [
+  { number: 1, label: "Window" },
+  { number: 2, label: "Curtain" },
+  { number: 3, label: "Cord" },
+  { number: 4, label: "Outlet / Socket" },
+  { number: 5, label: "Plug" },
+  { number: 6, label: "Table Leg / Foot" },
+  { number: 7, label: "Bracket / Brace" },
+  { number: 8, label: "Knob / Handle" },
+  { number: 9, label: "Eyebrow" },
+  { number: 10, label: "Pupil (part in middle of eye)" },
+  { number: 11, label: "Nostril / Nares (hole in the nose)" },
+  { number: 12, label: "Chin" },
+  { number: 13, label: "Collar" },
+  { number: 14, label: "Cheek" },
+  { number: 15, label: "Eyelash" },
+  { number: 16, label: "Forehead" }
+];
+
+// Generate scoring fields
+const picturePartsList = document.getElementById('picture_parts_list');
+picturePartsItems.forEach(item => {
+  picturePartsList.innerHTML += `
+    <h6>Item ${item.number}: Expected - ${item.label}</h6>
+    <label>Score:</label>
+    <select id="score_${item.number}" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label>Notes:</label>
+    <textarea id="note_${item.number}" class="form-control mb-2" rows="1" placeholder="E.g., described vaguely, misnamed, circumlocution..."></textarea>
+
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="hesitation_${item.number}">
+      <label class="form-check-label" for="hesitation_${item.number}">H = Hesitation >4s</label>
+    </div>
+
+    <div class="form-check form-check-inline mb-3">
+      <input class="form-check-input" type="checkbox" id="cue_${item.number}">
+      <label class="form-check-label" for="cue_${item.number}">C = Cue Needed (post-test)</label>
+    </div>
+
+    <hr>
+  `;
+});
+
+// Scoring function
+function scorePictureParts() {
+  let totalCorrect = 0;
+  let observations = "";
+  
+  picturePartsItems.forEach(item => {
+    const score = parseInt(document.getElementById(`score_${item.number}`).value);
+    const note = document.getElementById(`note_${item.number}`).value.trim();
+    const hesitation = document.getElementById(`hesitation_${item.number}`).checked ? " (H)" : "";
+    const cue = document.getElementById(`cue_${item.number}`).checked ? " (C)" : "";
+
+    totalCorrect += score;
+
+    observations += `Item ${item.number} (${item.label}): Score ${score}${hesitation}${cue} | Notes: ${note}<br>`;
+  });
+
+  const time = parseInt(document.getElementById('picture_time').value) || 0;
+
+  let interpretation = "";
+  if (totalCorrect >= 14) {
+    interpretation = "Excellent rapid lexical retrieval and visual-verbal integration.";
+  } else if (totalCorrect >= 11) {
+    interpretation = "Mild lexical retrieval inefficiency under time pressure.";
+  } else {
+    interpretation = "Significant difficulty in rapid naming or semantic retrieval, possibly indicating lexical access or executive dysfunction.";
+  }
+
+  const output =
+    "Task: Picture Parts Naming" + "<br><br>" +
+    "Total Correct: " + totalCorrect + "/16" + "<br>" +
+    "Total Time: " + time + " seconds" + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation + "<br><br>" +
+    "<strong>Item-by-Item Observations:</strong><br>" + observations;
+
+  document.getElementById('picture_output').innerHTML = output;
+}
+</script>
+<!-- Phonological Cueing – Word Retrieval Task -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Phonological Cueing – Word Retrieval Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_phonological_cueing')">Show Instructions</button>
+    <div id="inst_phonological_cueing" class="collapsible-section mb-3", style="display: none;">
+      <p><strong>Rationale:</strong> Assesses phonological processing, phoneme manipulation, lexical retrieval from phonological anchors, and flexible verbal access critical for decoding and phonics.</p>
+
+      <p><strong>Instructions:</strong><br>
+      Say:<br>
+      <em>"Now I'm going to give you part of a word, and I want you to tell me the name of something you wear that has that sound in it. For example, if I ask you for something you wear with 'AT' in it, you might say 'hat'. If I say something with 'AP', you might say 'cap'. Are you ready? You have 30 seconds for all of them. Go!"</em><br><br>
+      Stimuli may be repeated. Directions may not be repeated.
+      </p>
+    </div>
+
+    <h5>Stimuli and Expected Responses</h5>
+
+    <div id="phonological_cue_list">
+      <!-- Items 1–8 -->
+    </div>
+
+    <label for="phonological_time" class="mt-3">Total Time (seconds):</label>
+    <input id="phonological_time" type="number" class="form-control mb-2" min="0" placeholder="e.g., 30, 35">
+
+    <button class="btn btn-info" onclick="scorePhonologicalCueing()">Generate Output</button>
+    <div id="phonological_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+// Items and Expected Responses
+const phonologicalCueItems = [
+  { number: 1, sound: "ox", expected: "socks" },
+  { number: 2, sound: "sweat", expected: "sweatshirt" },
+  { number: 3, sound: "ket", expected: "jacket" },
+  { number: 4, sound: "oat", expected: "coat" },
+  { number: 5, sound: "elt", expected: "belt" },
+  { number: 6, sound: "ert", expected: "skirt" },
+  { number: 7, sound: "ants", expected: "pants" },
+  { number: 8, sound: "gluh", expected: "gloves" }
+];
+
+// Generate scoring fields
+const phonologicalCueList = document.getElementById('phonological_cue_list');
+phonologicalCueItems.forEach(item => {
+  phonologicalCueList.innerHTML += `
+    <h6>Item ${item.number}: Sound - "${item.sound}" <small>(Expected: ${item.expected})</small></h6>
+    <label>Score:</label>
+    <select id="phonological_score_${item.number}" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label>Notes:</label>
+    <textarea id="phonological_note_${item.number}" class="form-control mb-2" rows="1" placeholder="E.g., blank, hesitation, incorrect item, phonological error..."></textarea>
+    <hr>
+  `;
+});
+
+// Scoring function
+function scorePhonologicalCueing() {
+  let totalCorrect = 0;
+  let observations = "";
+
+  phonologicalCueItems.forEach(item => {
+    const score = parseInt(document.getElementById(`phonological_score_${item.number}`).value);
+    const note = document.getElementById(`phonological_note_${item.number}`).value.trim();
+    totalCorrect += score;
+
+    observations += `Item ${item.number} ("${item.sound}") – Score ${score} | Notes: ${note}<br>`;
+  });
+
+  const time = parseInt(document.getElementById('phonological_time').value) || 0;
+
+  let interpretation = "";
+  if (totalCorrect === 8) {
+    interpretation = "Excellent phonological retrieval and sound manipulation skills.";
+  } else if (totalCorrect >= 6) {
+    interpretation = "Mild difficulty with phonological access; generally intact retrieval under sound constraints.";
+  } else {
+    interpretation = "Significant difficulty in phonological retrieval; potential weaknesses in decoding, sound association, or lexical access.";
+  }
+
+  const output =
+    "Task: Phonological Cueing – Word Retrieval" + "<br><br>" +
+    "Total Correct: " + totalCorrect + "/8" + "<br>" +
+    "Total Time: " + time + " seconds" + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation + "<br><br>" +
+    "<strong>Item-by-Item Observations:</strong><br>" + observations;
+
+  document.getElementById('phonological_output').innerHTML = output;
+}
+</script>
+<!-- Rapid Verbal Recall Task -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Rapid Verbal Recall Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_rapid_recall')">Show Instructions</button>
+    <div id="inst_rapid_recall" class="collapsible-section mb-3" style="display: none;">
+      <p><strong>Rationale:</strong> Pure measure of verbal fluency, lexical retrieval speed, and self-monitoring during timed word production. Critical for language processing and executive function.</p>
+
+      <p><strong>Instructions:</strong><br>
+      Say:<br>
+      <em>"I'm going to read you a list of short and easy questions that ask you to name something you already know. For example, I might ask, 'Name something you wear on your head,' and you would say 'hat'. I'd like you to answer as quickly as you can so we can see how many questions you can answer in 30 seconds. If you give me an answer that's wrong, you can change your answer. If it's taking too long, I'll skip to the next question. Are you ready? Let's begin."</em><br><br>
+      Begin timing after reading the first full question.  
+      Read ~1 item per second.  
+      If no response in 5 seconds, skip.  
+      If mid-question at 30s, allow response.
+      </p>
+    </div>
+
+    <h5>Test Items and Expected Responses</h5>
+
+    <div id="rapid_recall_list">
+      <!-- Items 1–15 -->
+    </div>
+
+    <label for="rapid_recall_time" class="mt-3">Total Time (seconds):</label>
+    <input id="rapid_recall_time" type="number" class="form-control mb-2" min="0" placeholder="e.g., 30, 32, etc.">
+
+    <button class="btn btn-info" onclick="scoreRapidRecall()">Generate Output</button>
+    <div id="rapid_recall_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+// Items and Expected Responses
+const rapidRecallItems = [
+  { number: 1, question: "An insect that bites", expected: "mosquito" },
+  { number: 2, question: "A thing for measuring", expected: "ruler" },
+  { number: 3, question: "A baby cat", expected: "kitten" },
+  { number: 4, question: "The outside of an egg", expected: "shell" },
+  { number: 5, question: "A room for hanging things", expected: "closet" },
+  { number: 6, question: "What you walk upstairs", expected: "stairs" },
+  { number: 7, question: "A cold dessert", expected: "ice cream" },
+  { number: 8, question: "A thing for digging", expected: "shovel" },
+  { number: 9, question: "The tip of a pencil", expected: "point or lead" },
+  { number: 10, question: "What trains run on", expected: "tracks" },
+  { number: 11, question: "An animal that sings", expected: "bird" },
+  { number: 12, question: "A thing with two wheels", expected: "bicycle" },
+  { number: 13, question: "A white drink", expected: "milk" },
+  { number: 14, question: "Something you slice with", expected: "knife" },
+  { number: 15, question: "A room you cook in", expected: "kitchen" }
+];
+
+// Generate scoring fields
+const rapidRecallList = document.getElementById('rapid_recall_list');
+rapidRecallItems.forEach(item => {
+  rapidRecallList.innerHTML += `
+    <h6>Item ${item.number}: ${item.question} <small>(Expected: ${item.expected})</small></h6>
+    <label>Score:</label>
+    <select id="rapid_score_${item.number}" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect / No Response</option>
+    </select>
+
+    <label>Child's Actual Response:</label>
+    <textarea id="rapid_note_${item.number}" class="form-control mb-2" rows="1" placeholder="E.g., blank, error, initial wrong then corrected..."></textarea>
+    <hr>
+  `;
+});
+
+// Scoring function
+function scoreRapidRecall() {
+  let totalCorrect = 0;
+  let observations = "";
+
+  rapidRecallItems.forEach(item => {
+    const score = parseInt(document.getElementById(`rapid_score_${item.number}`).value);
+    const note = document.getElementById(`rapid_note_${item.number}`).value.trim();
+    totalCorrect += score;
+
+    observations += `Item ${item.number} ("${item.question}") – Score ${score} | Response: ${note}<br>`;
+  });
+
+  const time = parseInt(document.getElementById('rapid_recall_time').value) || 0;
+
+  let interpretation = "";
+  if (totalCorrect >= 13) {
+    interpretation = "Excellent rapid lexical retrieval and verbal fluency.";
+  } else if (totalCorrect >= 10) {
+    interpretation = "Mild weakness in lexical retrieval speed; generally functional verbal fluency.";
+  } else {
+    interpretation = "Significant retrieval inefficiency; possible word-finding or executive fluency difficulties.";
+  }
+
+  const output =
+    "Task: Rapid Verbal Recall" + "<br><br>" +
+    "Total Correct: " + totalCorrect + "/15" + "<br>" +
+    "Total Time: " + time + " seconds" + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation + "<br><br>" +
+    "<strong>Item-by-Item Observations:</strong><br>" + observations;
+
+  document.getElementById('rapid_recall_output').innerHTML = output;
+}
+</script>
+<!-- Lock and Key Task (Corrected Version) -->
+<div class="card mb-4 border-dark">
+  <div class="card-header bg-dark text-white">Lock and Key Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_lock_key')">Show Instructions</button>
+    <div id="inst_lock_key" class="collapsible-section mb-3">
+      <p><strong>Introduction:</strong> Evaluates visual-spatial reasoning, mental rotation, nonverbal problem solving, sustained attention, and impulsivity. Sensitive to ADHD and visual processing differences.</p>
+
+      <p><strong>Purpose:</strong> Measures flexible spatial reasoning, mental manipulation of visual forms, problem solving, and sustained attention under cognitive load.</p>
+
+      <p><strong>Instructions:</strong><br>
+      Say:<br>
+      <em>"These shapes are like puzzle blocks. Can you find one that fits together with the shaded one on the left to make a perfect square like the one up here? Once you understand rotation, there might be one or two blocks that fit perfectly. Look at all four choices before you decide. Imagine turning the shape in your head to fit."</em><br><br>
+      Only assist during examples and the first row.
+      </p>
+    </div>
+
+<div class="text-center my-4">
+  <div class="btn-group" role="group" aria-label="PDF Downloads">
+  <a href="https://10952ce7-c250-499e-92ce-0bb7ad8d338c.usrfiles.com/ugd/10952c_71fa9ffed0fa441aa4fe6c4aced93708.pdf" 
+     target="_blank" 
+     class="btn btn-primary btn-sm">
+     Download Stimulus Book Page 11
+    </a>
+  </div>
+
+    <br><hr>
+
+    <h5>Scoring Section</h5>
+
+    <div id="lock_key_list">
+      <!-- Puzzle Scoring -->
+    </div>
+
+    <label for="lock_key_notes" class="mt-3">Clinician Observations:</label>
+    <textarea id="lock_key_notes" class="form-control mb-2" rows="3" placeholder="E.g., impulsive circling, skipped options, struggles with rotation, unusual strategy, hesitation, visual misfires, etc."></textarea>
+
+    <button class="btn btn-dark" onclick="scoreLockKey()">Generate Output</button>
+    <div id="lock_key_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+// Puzzle Scoring Scheme (corrected)
+const lockKeyPuzzles = [
+  { number: 1, points: 2 },
+  { number: 2, points: 1 },
+  { number: 3, points: 2 },
+  { number: 4, points: 1 },
+  { number: 5, points: 2 },
+  { number: 6, points: 1 },
+  { number: 7, points: 2 }  // Updated: Puzzle 7 now max 2 points
+];
+
+// Generate scoring fields
+const lockKeyList = document.getElementById('lock_key_list');
+lockKeyPuzzles.forEach(puzzle => {
+  lockKeyList.innerHTML += `
+    <h6>Puzzle ${puzzle.number} (Max Points: ${puzzle.points})</h6>
+    <label>Score:</label>
+    <select id="lock_score_${puzzle.number}" class="form-select mb-2">
+      <option value="${puzzle.points}">${puzzle.points} = Fully Correct (both matches if 2 exist)</option>
+      <option value="1">1 = Partial Credit (only 1 match identified)</option>
+      <option value="0">0 = Incorrect / Missed</option>
+    </select>
+    <hr>
+  `;
+});
+
+// Scoring function
+function scoreLockKey() {
+  let totalScore = 0;
+  let maxScore = 0;
+  let observations = document.getElementById('lock_key_notes').value.trim();
+
+  lockKeyPuzzles.forEach(puzzle => {
+    const score = parseInt(document.getElementById(`lock_score_${puzzle.number}`).value);
+    totalScore += score;
+    maxScore += puzzle.points;
+  });
+
+  let interpretation = "";
+  if (totalScore === maxScore) {
+    interpretation = "Outstanding visual-spatial reasoning, flexible mental rotation, and strong sustained attention.";
+  } else if (totalScore >= maxScore * 0.7) {
+    interpretation = "Mild weakness in spatial reasoning or attentional control; generally effective mental rotation abilities.";
+  } else {
+    interpretation = "Significant difficulty with mental rotation, spatial integration, or attention control; possible impulsivity or visual processing challenges.";
+  }
+
+  const output =
+    "Task: Lock and Key" + "<br><br>" +
+    "Total Score: " + totalScore + " out of " + maxScore + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation + "<br><br>" +
+    "<strong>Clinician Observations:</strong> " + observations;
+
+  document.getElementById('lock_key_output').innerHTML = output;
+}
+</script>
+<!-- Missing Information Task -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Missing Information Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-dark btn-sm mb-2" onclick="toggleSection('inst_missing_info')">Show Instructions</button>
+    <div id="inst_missing_info" class="collapsible-section mb-3">
+      <p><strong>Rationale:</strong> Assesses higher-order language processing, inferential thinking, logical deduction when key facts are unstated, memory for complex verbal input, and linguistic attention.</p>
+
+      <p><strong>Instructions:</strong><br>
+      Say:<br>
+      <em>"Sometimes when someone tells you something, they don't say everything you need to know. You have to figure out what they mean. I'm going to tell you something and then ask you a question about it. Listen carefully, because I will only say it once."</em><br><br>
+      Read each story once naturally. Child responds orally. Score immediately after response.
+      </p>
+    </div>
+
+    <h5>Scenarios and Response Options</h5>
+
+    <div id="missing_info_list">
+      <!-- Items 1–5 -->
+    </div>
+
+    <label for="missing_info_notes" class="mt-3">Clinician Observations:</label>
+    <textarea id="missing_info_notes" class="form-control mb-2" rows="3" placeholder="E.g., literal interpretations, impulsive guessing, missing inference, concrete thinking, etc."></textarea>
+
+    <button class="btn btn-info" onclick="scoreMissingInformation()">Generate Output</button>
+    <div id="missing_info_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+// Scenarios and Expected Answers
+const missingInfoItems = [
+  {
+    number: 1,
+    story: "Sarah came out of the garage with greasy hands.",
+    question: "What was she likely doing?",
+    options: ["Fixing a car (Correct)", "Painting or drawing", "Playing with pets"],
+    correct: "Fixing a car (Correct)"
+  },
+  {
+    number: 2,
+    story: "Marco grabbed his dog after thunder and lightning.",
+    question: "Why?",
+    options: ["Protecting the dog (Correct)", "To dress it up", "To clean the dog"],
+    correct: "Protecting the dog (Correct)"
+  },
+  {
+    number: 3,
+    story: "Ben set the table and took food from the oven.",
+    question: "What was he getting ready for?",
+    options: ["Dinner / A meal (Correct)", "Cleaning up", "Going to school"],
+    correct: "Dinner / A meal (Correct)"
+  },
+  {
+    number: 4,
+    story: "Jasmine was soaked, even though she didn't swim.",
+    question: "Why?",
+    options: ["It was raining (Correct)", "She spilled water", "She fell in a pool"],
+    correct: "It was raining (Correct)"
+  },
+  {
+    number: 5,
+    story: "Amy wore mismatched shoes to class.",
+    question: "Why did the teacher give her a strange look?",
+    options: ["She wore mismatched shoes (Correct)", "She had a new haircut", "She was wearing a costume"],
+    correct: "She wore mismatched shoes (Correct)"
+  }
+];
+
+// Generate scenario fields
+const missingInfoList = document.getElementById('missing_info_list');
+missingInfoItems.forEach(item => {
+  missingInfoList.innerHTML += `
+    <h6>Item ${item.number}: ${item.story}</h6>
+    <p><em>${item.question}</em></p>
+
+    <label for="missing_choice_${item.number}">Select Response:</label>
+    <select id="missing_choice_${item.number}" class="form-select mb-2">
+      ${item.options.map(option => `<option value="${option}">${option}</option>`).join('')}
+    </select>
+
+    <label for="missing_note_${item.number}">Notes:</label>
+    <textarea id="missing_note_${item.number}" class="form-control mb-2" rows="1" placeholder="E.g., concrete interpretation, partial inference, unusual strategy..."></textarea>
+    <hr>
+  `;
+});
+
+// Scoring function
+function scoreMissingInformation() {
+  let totalCorrect = 0;
+  let totalItems = missingInfoItems.length;
+  let observations = document.getElementById('missing_info_notes').value.trim();
+  let detailedResponses = "";
+
+  missingInfoItems.forEach(item => {
+    const selected = document.getElementById(`missing_choice_${item.number}`).value;
+    const note = document.getElementById(`missing_note_${item.number}`).value.trim();
+
+    if (selected.includes("Correct")) {
+      totalCorrect += 1;
+    }
+
+    detailedResponses += `Item ${item.number}: Selected - "${selected}" | Notes: ${note}<br>`;
+  });
+
+  let interpretation = "";
+  if (totalCorrect === totalItems) {
+    interpretation = "Excellent inferential reasoning and memory for implicit verbal information.";
+  } else if (totalCorrect >= 3) {
+    interpretation = "Mild difficulty with inference or higher-order language processing; generally adequate comprehension.";
+  } else {
+    interpretation = "Significant difficulty with inferential reasoning; concrete or literal processing style likely.";
+  }
+
+  const output =
+    "Task: Missing Information" + "<br><br>" +
+    "Total Correct: " + totalCorrect + " out of " + totalItems + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation + "<br><br>" +
+    "<strong>Item-by-Item Responses:</strong><br>" + detailedResponses + "<br>" +
+    "<strong>Clinician Observations:</strong><br>" + observations;
+
+  document.getElementById('missing_info_output').innerHTML = output;
+}
+</script>
+<!-- Sentence Formulation Task -->
+<div class="card mb-4 border-info">
+  <div class="card-header bg-info text-white">Sentence Formulation Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_sentence_formulation')">Show Instructions</button>
+    <div id="inst_sentence_formulation" class="collapsible-section mb-3" style="display: none;">
+      <p><strong>Rationale:</strong> Assesses expressive language generation, grammatical sentence construction, verbal fluency, flexibility, and sequencing skills.</p>
+
+      <p><strong>Instructions:</strong><br>
+      Say:<br>
+      <em>"I'm going to give you a few words. I want you to make a complete, grammatically correct sentence using all of the words. Try to make the sentence sound natural."</em>
+      </p>
+    </div>
+
+    <h5>Sentence Formulation Items</h5>
+
+    <div id="sentence_formulation_list">
+      <!-- Items 1–4 -->
+    </div>
+
+    <label for="sentence_formulation_notes" class="mt-3">Clinician Overall Observations:</label>
+    <textarea id="sentence_formulation_notes" class="form-control mb-2" rows="3" placeholder="E.g., awkward phrasing, fragmented grammar, natural flow, creativity..."></textarea>
+
+    <button class="btn btn-info" onclick="scoreSentenceFormulation()">Generate Output</button>
+    <div id="sentence_formulation_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+// Sentence Formulation Prompts
+const sentenceFormulationItems = [
+  { number: 1, words: "walk, road, until" },
+  { number: 2, words: "road, slippery, not, all" },
+  { number: 3, words: "out, road, dark, rocky" },
+  { number: 4, words: "don't, tires, road, unless" }
+];
+
+// Generate input fields
+const sentenceFormulationList = document.getElementById('sentence_formulation_list');
+sentenceFormulationItems.forEach(item => {
+  sentenceFormulationList.innerHTML += `
+    <h6>Item ${item.number}: Words - ${item.words}</h6>
+
+    <label for="child_sentence_${item.number}">Child's Sentence:</label>
+    <textarea id="child_sentence_${item.number}" class="form-control mb-2" rows="1" placeholder="Child's attempt here..."></textarea>
+
+    <label>Content Accuracy:</label>
+    <select id="content_score_${item.number}" class="form-select mb-2">
+      <option value="1">1 = Correct</option>
+      <option value="0">0 = Incorrect</option>
+    </select>
+
+    <label>Fluency:</label>
+    <select id="fluency_score_${item.number}" class="form-select mb-2">
+      <option value="2">2 = Natural Fluent</option>
+      <option value="1">1 = Somewhat Hesitant</option>
+      <option value="0">0 = Disfluent / Broken</option>
+    </select>
+
+    <label for="sentence_note_${item.number}">Notes:</label>
+    <textarea id="sentence_note_${item.number}" class="form-control mb-2" rows="1" placeholder="E.g., slight grammar errors, long pauses, fragmented syntax..."></textarea>
+    <hr>
+  `;
+});
+
+// Scoring function
+function scoreSentenceFormulation() {
+  let totalContentScore = 0;
+  let totalFluencyScore = 0;
+  let maxContentScore = sentenceFormulationItems.length;
+  let maxFluencyScore = sentenceFormulationItems.length * 2;
+  let detailedResponses = "";
+  let overallNotes = document.getElementById('sentence_formulation_notes').value.trim();
+
+  sentenceFormulationItems.forEach(item => {
+    const sentence = document.getElementById(`child_sentence_${item.number}`).value.trim();
+    const content = parseInt(document.getElementById(`content_score_${item.number}`).value);
+    const fluency = parseInt(document.getElementById(`fluency_score_${item.number}`).value);
+    const note = document.getElementById(`sentence_note_${item.number}`).value.trim();
+
+    totalContentScore += content;
+    totalFluencyScore += fluency;
+
+    detailedResponses += `Item ${item.number}: Sentence - "${sentence}" | Content Score: ${content} | Fluency Score: ${fluency} | Notes: ${note}<br>`;
+  });
+
+  let interpretation = "";
+  if (totalContentScore === maxContentScore && totalFluencyScore >= maxFluencyScore * 0.85) {
+    interpretation = "Excellent expressive language, fluent sentence generation, and grammatical construction.";
+  } else if (totalContentScore >= maxContentScore * 0.75 && totalFluencyScore >= maxFluencyScore * 0.6) {
+    interpretation = "Mild expressive language or fluency difficulties; generally adequate sentence formulation.";
+  } else {
+    interpretation = "Significant difficulty with sentence construction, expressive fluency, or verbal sequencing.";
+  }
+
+  const output =
+    "Task: Sentence Formulation" + "<br><br>" +
+    "Total Content Score: " + totalContentScore + " out of " + maxContentScore + "<br>" +
+    "Total Fluency Score: " + totalFluencyScore + " out of " + maxFluencyScore + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation + "<br><br>" +
+    "<strong>Item-by-Item Responses:</strong><br>" + detailedResponses + "<br>" +
+    "<strong>Clinician Overall Observations:</strong><br>" + overallNotes;
+
+  document.getElementById('sentence_formulation_output').innerHTML = output;
+}
+</script>
+<!-- Graph Paper Copying Task -->
+<div class="card mb-4 border-secondary">
+  <div class="card-header bg-secondary text-white">Graph Paper Copying Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_graph_paper')">Show Instructions</button>
+    <div id="inst_graph_paper" class="collapsible-section mb-3">
+      <p><strong>Purpose:</strong> Evaluates motor planning, visual-motor integration, spatial organization, and self-monitoring skills under time constraints.</p>
+
+      <p><strong>Instructions:</strong><br>
+      Say:<br>
+      <em>"Copy this design into the bottom box. Same size, same shape, same position. You have two minutes. Ready, go."</em><br><br>
+      Use stopwatch.  
+      After 90 seconds, prompt: <em>"You have about another 30 seconds."</em>
+      </p>
+    </div>
+
+<div class="text-center my-4">
+  <div class="btn-group" role="group" aria-label="PDF Downloads">
+  <a href="https://10952ce7-c250-499e-92ce-0bb7ad8d338c.usrfiles.com/ugd/10952c_8297781297a7472f9a39ea344fde83dc.pdf" 
+     target="_blank" 
+     class="btn btn-primary btn-sm">
+     Download Response Book Page 7
+    </a>
+  </div>
+
+    <br><hr>
+
+    <h5>Scoring Section</h5>
+
+    <label>Accuracy of Copy:</label>
+    <select id="accuracy_score" class="form-select mb-2">
+      <option value="2">2 = Accurate copy (only minor deviations)</option>
+      <option value="1">1 = Minor errors (shape slightly off, position shifted)</option>
+      <option value="0">0 = Major distortions</option>
+    </select>
+
+    <label>Line Quality:</label>
+    <select id="line_quality_score" class="form-select mb-2">
+      <option value="2">2 = Clean, precise lines</option>
+      <option value="1">1 = Somewhat wavy lines</option>
+      <option value="0">0 = Disorganized or unclear lines</option>
+    </select>
+
+    <label>Strategy Use:</label><br>
+    <div class="form-check form-check-inline mb-2">
+      <input class="form-check-input" type="checkbox" id="strategy_used">
+      <label class="form-check-label" for="strategy_used">Used strategy (e.g., counting squares)</label>
+    </div>
+
+    <br><label for="graph_time" class="mt-2">Total Time (seconds):</label>
+    <input id="graph_time" type="number" class="form-control mb-2" min="0" placeholder="e.g., 90, 110, 120">
+
+    <label for="graph_observations" class="mt-3">Clinician Observations:</label>
+    <textarea id="graph_observations" class="form-control mb-2" rows="3" placeholder="E.g., missed details, planning issues, impulsivity, strategies used, hesitations..."></textarea>
+
+    <button class="btn btn-secondary" onclick="scoreGraphPaper()">Generate Output</button>
+    <div id="graph_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+// Scoring function
+function scoreGraphPaper() {
+  const accuracy = parseInt(document.getElementById('accuracy_score').value);
+  const lineQuality = parseInt(document.getElementById('line_quality_score').value);
+  const strategy = document.getElementById('strategy_used').checked;
+  const time = parseInt(document.getElementById('graph_time').value) || 0;
+  const observations = document.getElementById('graph_observations').value.trim();
+
+  let interpretation = "";
+  if (accuracy === 2 && lineQuality === 2 && strategy && time <= 120) {
+    interpretation = "Strong visual-motor integration, planning, and self-monitoring. Efficient use of time and strategies.";
+  } else if (accuracy >= 1 && lineQuality >= 1 && time <= 120) {
+    interpretation = "Mild difficulty with precision or planning; generally intact visual-motor integration.";
+  } else {
+    interpretation = "Significant weakness in planning, visual-motor integration, or self-monitoring. Possible attentional or executive deficits.";
+  }
+
+  const output =
+    "Task: Graph Paper Copying" + "<br><br>" +
+    "Accuracy Score: " + accuracy + "/2" + "<br>" +
+    "Line Quality Score: " + lineQuality + "/2" + "<br>" +
+    "Strategy Used: " + (strategy ? "Yes" : "No") + "<br>" +
+    "Total Time: " + time + " seconds" + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation + "<br><br>" +
+    "<strong>Clinician Observations:</strong><br>" + observations;
+
+  document.getElementById('graph_output').innerHTML = output;
+}
+</script>
+<!-- Digit Span Task Card -->
+<div class="card mb-4 mt-4" style="border: 2px solid #6c63ff;">
+  <div class="card-header bg-info text-white">
+    Digit Span (Forward and Backward) Task
+  </div>
+  <div class="card-body">
+
+    <!-- Instructions Button -->
+    <button class="btn btn-outline-info btn-sm mb-3" onclick="toggleSection('inst_digit_span', this)">Show Instructions</button>
+
+    <!-- Collapsible Instructions -->
+    <div id="inst_digit_span" class="collapsible-section mb-4">
+      <p><strong>Rationale:</strong> Evaluates working memory, attentional control, sequencing ability, and manipulation of verbal information.</p>
+
+      <p><strong>Instructions:</strong><br>
+      Say:<br>
+      <em>"I'm going to say some numbers. I want you to repeat them exactly the same way I say them. Later, I’ll ask you to say them backward. I will say one number per second. Ready?"</em><br><br>
+      - Forward Span: Repeat digits in order.<br>
+      - Backward Span: Repeat digits in reverse order.<br>
+      - Start with 2 digits and increase after each correct trial.<br>
+      - Stop after 2 consecutive errors.
+      </p>
+    </div>
+
+    <!-- Forward Digit Span -->
+    <h5>Forward Digit Span</h5>
+    <div class="container">
+      <div class="row" id="forward_span_list">
+        <!-- Forward items generated here -->
+      </div>
+    </div>
+
+    <!-- Backward Digit Span -->
+    <h5 class="mt-4">Backward Digit Span</h5>
+    <div class="container">
+      <div class="row" id="backward_span_list">
+        <!-- Backward items generated here -->
+      </div>
+    </div>
+
+    <!-- Clinician Observations -->
+    <label for="digit_span_notes" class="mt-3">Clinician Observations:</label>
+    <textarea id="digit_span_notes" class="form-control mb-3" rows="3" placeholder="E.g., attention lapses, impulsive errors, slow response, fatigue signs..."></textarea>
+
+    <!-- Score Button -->
+    <button class="btn btn-info" onclick="scoreDigitSpan()">Generate Output</button>
+
+    <!-- Output -->
+    <div id="digit_span_output" class="section-output mt-4"></div>
+
+  </div>
+</div>
+
+<!-- SCRIPT SECTION -->
+<script>
+// Toggle Instructions Button Text
+function toggleSection(id, button) {
+  const el = document.getElementById(id);
+  if (el.style.display === 'none' || el.style.display === '') {
+    el.style.display = 'block';
+    button.innerText = "Hide Instructions";
+  } else {
+    el.style.display = 'none';
+    button.innerText = "Show Instructions";
+  }
+}
+
+// Correctly Ordered Forward Items
+const forwardItems = [
+  "52", "73", "16", "72", "94",         // 2 digits
+  "971", "615", "521", "648", "836",     // 3 digits
+  "5318", "3741", "7596",                // 4 digits
+  "41839", "63258", "92483",              // 5 digits (highlight!)
+  "849713", "641397", "438975",           // 6 digits
+  "3197426", "9251638", "7145283",        // 7 digits
+  "46359271", "97412536", "49273165",     // 8 digits
+  "928137546", "824791365", "475182369"   // 9 digits
+];
+const backwardItems = forwardItems;
+
+// Generate Forward Inputs
+const forwardSpanList = document.getElementById('forward_span_list');
+forwardItems.forEach((item, idx) => {
+  const highlightClass = (item.length === 5) ? 'highlight-average' : '';
+
+  forwardSpanList.innerHTML += `
+    <div class="col-md-4 mb-3">
+      <div class="border p-2 rounded ${highlightClass}">
+        <strong>Item ${idx + 1}: ${item}</strong><br>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="forward_correct_${idx}" onchange="enforceSingleCheckbox('forward', ${idx})">
+          <label class="form-check-label" for="forward_correct_${idx}">Correct</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="forward_incorrect_${idx}" onchange="enforceSingleCheckbox('forward', ${idx})">
+          <label class="form-check-label" for="forward_incorrect_${idx}">Incorrect</label>
+        </div>
+      </div>
+    </div>
+  `;
+});
+
+// Generate Backward Inputs
+const backwardSpanList = document.getElementById('backward_span_list');
+backwardItems.forEach((item, idx) => {
+  const highlightClass = (item.length === 5) ? 'highlight-average' : '';
+
+  backwardSpanList.innerHTML += `
+    <div class="col-md-4 mb-3">
+      <div class="border p-2 rounded ${highlightClass}">
+        <strong>Item ${idx + 1}: ${item.split('').reverse().join('')}</strong><br>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="backward_correct_${idx}" onchange="enforceSingleCheckbox('backward', ${idx})">
+          <label class="form-check-label" for="backward_correct_${idx}">Correct</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="backward_incorrect_${idx}" onchange="enforceSingleCheckbox('backward', ${idx})">
+          <label class="form-check-label" for="backward_incorrect_${idx}">Incorrect</label>
+        </div>
+      </div>
+    </div>
+  `;
+});
+
+// Prevent double-checking both Correct and Incorrect
+function enforceSingleCheckbox(type, idx) {
+  const correct = document.getElementById(`${type}_correct_${idx}`);
+  const incorrect = document.getElementById(`${type}_incorrect_${idx}`);
+  
+  if (correct.checked && incorrect.checked) {
+    if (event.target.id.includes('correct')) {
+      incorrect.checked = false;
+    } else {
+      correct.checked = false;
+    }
+  }
+}
+
+// Score Task
+function scoreDigitSpan() {
+  let forwardMaxSpan = 0;
+  let backwardMaxSpan = 0;
+  let consecutiveForwardFailures = 0;
+  let consecutiveBackwardFailures = 0;
+
+  // Forward Scoring
+  for (let i = 0; i < forwardItems.length; i++) {
+    const correctChecked = document.getElementById(`forward_correct_${i}`).checked;
+    const incorrectChecked = document.getElementById(`forward_incorrect_${i}`).checked;
+
+    if (correctChecked) {
+      forwardMaxSpan = forwardItems[i].length;
+      consecutiveForwardFailures = 0;
+    } else if (incorrectChecked) {
+      consecutiveForwardFailures++;
+      if (consecutiveForwardFailures >= 2) break;
+    } else {
+      consecutiveForwardFailures++;
+      if (consecutiveForwardFailures >= 2) break;
+    }
+  }
+
+  // Backward Scoring
+  for (let i = 0; i < backwardItems.length; i++) {
+    const correctChecked = document.getElementById(`backward_correct_${i}`).checked;
+    const incorrectChecked = document.getElementById(`backward_incorrect_${i}`).checked;
+
+    if (correctChecked) {
+      backwardMaxSpan = backwardItems[i].length;
+      consecutiveBackwardFailures = 0;
+    } else if (incorrectChecked) {
+      consecutiveBackwardFailures++;
+      if (consecutiveBackwardFailures >= 2) break;
+    } else {
+      consecutiveBackwardFailures++;
+      if (consecutiveBackwardFailures >= 2) break;
+    }
+  }
+
+  // Interpretation
+  function interpretSpan(span) {
+    if (span >= 9) return "Exceptional working memory span.";
+    if (span >= 7) return "Above average working memory span.";
+    if (span >= 5) return "Average working memory span.";
+    return "Below expected working memory span.";
+  }
+
+  const forwardInterpret = interpretSpan(forwardMaxSpan);
+  const backwardInterpret = interpretSpan(backwardMaxSpan);
+
+  const observations = document.getElementById('digit_span_notes').value.trim();
+
+  const output =
+    "Task: Digit Span (Forward and Backward)" + "<br><br>" +
+    "<strong>Forward Span:</strong> " + forwardMaxSpan + " digits" + "<br>" +
+    "Forward Interpretation: " + forwardInterpret + "<br><br>" +
+    "<strong>Backward Span:</strong> " + backwardMaxSpan + " digits" + "<br>" +
+    "Backward Interpretation: " + backwardInterpret + "<br><br>" +
+    "<strong>Clinician Observations:</strong><br>" + observations;
+
+  document.getElementById('digit_span_output').innerHTML = output;
+}
+</script>
+<!-- Geometric Form Tapping Task -->
+<div class="card mb-4 border-primary">
+  <div class="card-header bg-primary text-white">Geometric Form Tapping Task</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_geometric_tapping')">Show Instructions</button>
+    <div id="inst_geometric_tapping" class="collapsible-section mb-3">
+      <p><strong>Rationale:</strong> Evaluates motor speed, precision, spatial awareness, visual tracking, and hand-eye coordination. Sensitive to fine motor planning and impulsivity.</p>
+
+      <p><strong>Instructions:</strong><br>
+      Say:<br>
+      <em>"I'm going to show you some shapes. I want you to tap specific points around each shape in a certain pattern. Try to be accurate and fast. I will tell you where to tap."</em><br><br>
+      Start with the square, then circle, then triangle.  
+      Observe timing, precision, and strategy.
+      </p>
+    </div>
+
+<div class="text-center my-4">
+  <div class="btn-group" role="group" aria-label="PDF Downloads">
+  <a href="https://10952ce7-c250-499e-92ce-0bb7ad8d338c.usrfiles.com/ugd/10952c_6e369fb033814530afa359721082411c.pdf" 
+     target="_blank" 
+     class="btn btn-primary btn-sm">
+     Download Stimulus Book Page 8
+    </a>
+  </div>
+
+    <h5>Form Tapping Trials</h5>
+
+    <div id="geometric_tapping_list">
+      <!-- Form Items -->
+    </div>
+
+    <label for="geometric_tapping_notes" class="mt-3">Clinician Overall Observations:</label>
+    <textarea id="geometric_tapping_notes" class="form-control mb-2" rows="3" placeholder="E.g., impulsive tapping, missed corners, slow pace, visual tracking errors..."></textarea>
+
+    <button class="btn btn-primary" onclick="scoreGeometricTapping()">Generate Output</button>
+    <div id="geometric_tapping_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+// Geometric Tapping Items
+const geometricItems = [
+  { number: 1, form: "Simple Square", expectedTaps: 4 },
+  { number: 2, form: "Complex Circle", expectedTaps: 5 },
+  { number: 3, form: "Triangle", expectedTaps: 3 }
+];
+
+// Generate input fields
+const geometricTappingList = document.getElementById('geometric_tapping_list');
+geometricItems.forEach(item => {
+  geometricTappingList.innerHTML += `
+    <h6>Item ${item.number}: ${item.form}</h6>
+
+    <label>Time to Complete (seconds):</label>
+    <input id="geo_time_${item.number}" type="number" class="form-control mb-2" min="0" placeholder="e.g., 10">
+
+    <label>Correct Number of Taps (out of ${item.expectedTaps}):</label>
+    <input id="geo_correct_${item.number}" type="number" class="form-control mb-2" min="0" max="${item.expectedTaps}" placeholder="e.g., 4, 5, 3">
+
+    <label for="geo_notes_${item.number}">Specific Observations:</label>
+    <textarea id="geo_notes_${item.number}" class="form-control mb-2" rows="1" placeholder="E.g., missed one corner, tapped twice, slow transitions..."></textarea>
+    <hr>
+  `;
+});
+
+// Scoring function
+function scoreGeometricTapping() {
+  let output = "Task: Geometric Form Tapping" + "<br><br>";
+  let clinicianNotes = document.getElementById('geometric_tapping_notes').value.trim();
+
+  geometricItems.forEach(item => {
+    const time = parseInt(document.getElementById(`geo_time_${item.number}`).value) || 0;
+    const correct = parseInt(document.getElementById(`geo_correct_${item.number}`).value) || 0;
+    const notes = document.getElementById(`geo_notes_${item.number}`).value.trim();
+
+    let interpretation = "";
+
+    if (correct === item.expectedTaps && time <= 10) {
+      interpretation = "Excellent motor precision and speed.";
+    } else if (correct >= item.expectedTaps - 1 && time <= 15) {
+      interpretation = "Mild slowness or minor precision errors.";
+    } else {
+      interpretation = "Significant difficulty with speed, coordination, or spatial tracking.";
+    }
+
+    output += `<strong>Item ${item.number}: ${item.form}</strong><br>`;
+    output += "Time: " + time + " seconds<br>";
+    output += "Correct Taps: " + correct + " out of " + item.expectedTaps + "<br>";
+    output += "<strong>Interpretation:</strong> " + interpretation + "<br>";
+    output += "Specific Observations: " + notes + "<br><br>";
+  });
+
+  output += "<strong>Clinician Overall Observations:</strong><br>" + clinicianNotes;
+
+  document.getElementById('geometric_tapping_output').innerHTML = output;
+}
+</script>
+<!-- Complex Figure Drawing (Rey-Osterrieth Style) Task -->
+<div class="card mb-4 border-dark">
+  <div class="card-header bg-dark text-white">Complex Figure Drawing Task (Immediate Recall)</div>
+  <div class="card-body">
+    <button class="btn btn-outline-light btn-sm mb-2" onclick="toggleSection('inst_complex_figure')">Show Instructions</button>
+    <div id="inst_complex_figure" class="collapsible-section mb-3">
+      <p><strong>Rationale:</strong> Measures visual-perceptual organization, spatial memory encoding, graphomotor planning, attention to visual details, and strategic organization skills.</p>
+
+      <p><strong>Instructions:</strong><br>
+      Say:<br>
+      <em>"I will show you a picture for 30 seconds. Look carefully. After 30 seconds, I will take it away and ask you to draw what you remember. Try to make it look as close as possible to what you saw."</em><br><br>
+      Time exposure: 30 seconds.  
+      Then remove figure.  
+      Unlimited time to recall-draw.
+      </p>
+    </div>
+
+<div class="text-center my-4">
+  <div class="btn-group" role="group" aria-label="PDF Downloads">
+  <a href="https://10952ce7-c250-499e-92ce-0bb7ad8d338c.usrfiles.com/ugd/10952c_de4cba9dccd54707a372e0d17f205524.pdf" 
+     target="_blank" 
+     class="btn btn-primary btn-sm">
+     Download Stimulus Book Page 8
+    </a>
+  </div>
+
+    <br><hr>
+
+    <h5>Scoring Section</h5>
+
+    <label>Total Number of Key Features (out of 18 components):</label>
+    <input id="complex_total_correct" type="number" class="form-control mb-2" min="0" max="18" placeholder="e.g., 15">
+
+    <label>Spatial Layout Accuracy:</label>
+    <select id="complex_layout_score" class="form-select mb-2">
+      <option value="2">2 = Accurate spatial relationships</option>
+      <option value="1">1 = Minor spatial misplacements</option>
+      <option value="0">0 = Major spatial disorganization</option>
+    </select>
+
+    <label>Proportionality:</label>
+    <select id="complex_proportion_score" class="form-select mb-2">
+      <option value="2">2 = Correct proportions maintained</option>
+      <option value="1">1 = Minor disproportion</option>
+      <option value="0">0 = Major disproportion or fragmented drawing</option>
+    </select>
+
+    <label for="complex_figure_notes" class="mt-3">Clinician Observations:</label>
+    <textarea id="complex_figure_notes" class="form-control mb-2" rows="3" placeholder="E.g., piecewise strategy, holistic drawing, skipped details, impulsivity, disorganized copying..."></textarea>
+
+    <button class="btn btn-dark" onclick="scoreComplexFigure()">Generate Output</button>
+    <div id="complex_figure_output" class="section-output mt-2"></div>
+  </div>
+</div>
+
+<script>
+// Scoring function
+function scoreComplexFigure() {
+  const correct = parseInt(document.getElementById('complex_total_correct').value) || 0;
+  const layout = parseInt(document.getElementById('complex_layout_score').value);
+  const proportion = parseInt(document.getElementById('complex_proportion_score').value);
+  const observations = document.getElementById('complex_figure_notes').value.trim();
+
+  let accuracyPercent = (correct / 18) * 100;
+  accuracyPercent = Math.round(accuracyPercent);
+
+  let interpretation = "";
+
+  if (accuracyPercent >= 85 && layout === 2 && proportion === 2) {
+    interpretation = "Excellent visual memory, spatial organization, and graphomotor planning.";
+  } else if (accuracyPercent >= 60 && (layout >= 1) && (proportion >= 1)) {
+    interpretation = "Mild difficulty with visual detail retention or spatial organization.";
+  } else {
+    interpretation = "Significant difficulty with visual encoding, organization, or memory recall.";
+  }
+
+  const output =
+    "Task: Complex Figure Drawing (Immediate Recall)" + "<br><br>" +
+    "Correct Features Recalled: " + correct + " out of 18 (" + accuracyPercent + "%)" + "<br>" +
+    "Spatial Layout Score: " + layout + " out of 2" + "<br>" +
+    "Proportionality Score: " + proportion + " out of 2" + "<br><br>" +
+    "<strong>Automated Clinical Interpretation:</strong> " + interpretation + "<br><br>" +
+    "<strong>Clinician Observations:</strong><br>" + observations;
+
+  document.getElementById('complex_figure_output').innerHTML = output;
+}
+</script>
+
+<script>
+// Simple collapsible toggle function
+function toggleSection(id) {
+  const el = document.getElementById(id);
+  if (el.style.display === 'block') {
+    el.style.display = 'none';
+  } else {
+    el.style.display = 'block';
+  }
+}
+</script>
+
+<!-- Final Results Buttons -->
+<div class="text-center mt-5 mb-4">
+  <button class="btn btn-success mb-2" onclick="generateFinalResults()">Generate Final Results Only (PDF/Print)</button><br>
+  <button class="btn btn-primary" onclick="copyFinalResults()">Copy All Results to Clipboard</button>
+</div>
+
+<script>
+function generateFinalResults() {
+  const outputs = document.querySelectorAll('.section-output');
+  let finalContent = '';
+
+  outputs.forEach(section => {
+    if (section.innerHTML.trim() !== '') { // Only include non-empty outputs
+      finalContent += section.innerHTML + '<br><br>';
+    }
+  });
+
+  if (finalContent === '') {
+    alert('No results generated yet. Please complete and generate outputs for tasks first.');
+    return;
+  }
+
+  // Create a new printable window
+  const printWindow = window.open('', '_blank', 'width=800,height=600');
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>PEERAMID2 - Final Results</title>
+        <style>
+          body {
+            font-family: 'Roboto', sans-serif;
+            padding: 40px;
+            background: white;
+            color: black;
+          }
+          h1 {
+            text-align: center;
+            margin-bottom: 30px;
+          }
+          div {
+            margin-bottom: 20px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>PEERAMID2 - Final Results Summary</h1>
+        ${finalContent}
+      </body>
+    </html>
+  `);
+  printWindow.document.close();
+  printWindow.focus();
+  printWindow.print();
+}
+
+function copyFinalResults() {
+  const outputs = document.querySelectorAll('.section-output');
+  let finalText = '';
+
+  outputs.forEach(section => {
+    if (section.innerText.trim() !== '') { // Only include non-empty outputs
+      finalText += section.innerText + '\n\n';
+    }
+  });
+
+  if (finalText === '') {
+    alert('No results to copy yet. Please complete and generate outputs for tasks first.');
+    return;
+  }
+
+  // Create a temporary textarea to copy
+  const textarea = document.createElement('textarea');
+  textarea.value = finalText;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textarea);
+
+  alert('All results copied to clipboard!');
+}
+</script>
+</body>
+</html>
+
+<!-- TOGGLE SECTION SCRIPT -->
+<script>
+function toggleSection(id) {
+  const el = document.getElementById(id);
+  if (el.style.display === 'block') {
+    el.style.display = 'none';
+  } else {
+    el.style.display = 'block';
+  }
+}
+</script>
+</body>
+</html>
+<script>
+
+<!-- Footer -->
+<div class="marine-footer">
+<!-- MarineMD Branding -->
+<div class="text-center my-4">
+<footer style:"background-color: #f8f9fa; padding: 20px; text-align: center; margin-top: 40px;">
+ <img src= "https://static.wixstatic.com/media/10952c_893db6b10e1147679aabc35bf1bf2bc3~mv2.png" alt="Footer Logo" style="height: 80px;">
+ <p style="margin-top: 10px;">&copy; 2025 MarineMD. All rights reserved.</p>
+</div>
+
+
